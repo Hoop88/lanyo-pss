@@ -1,0 +1,58 @@
+.syslogo{
+	width:320px; height:50px;
+	background: url(../../images/skin/xtheme-gray/logo.gif) no-repeat !important;
+}
+.banner {
+	width: 100%;
+	height: 73px;
+	background: url(../../images/skin/xtheme-gray/banner.gif) repeat-x center;
+	margin: 0px auto;
+	padding: 0px;
+	overflow: hidden;
+}
+
+.banner-pic {
+	width: 100%;
+	height: 73px;
+	margin: 0px auto auto auto;
+	padding: 0px;
+	overflow: hidden;
+	background: url(../../images/skin/xtheme-gray/banner-pic.gif) no-repeat center bottom;
+}
+
+.head-right {
+	width: 400px;
+	height: 73px;
+	overflow: hidden;
+	float: right;
+	margin: 0px auto;
+	padding: 0px;
+}
+
+.head-right-t {
+	width: 383px;
+	height: 21px;
+	float: right;
+	overflow: hidden;
+	margin: 0px auto auto auto;
+	padding: 0px;
+	background: url(../../images/skin/xtheme-gray/head-right-t.gif);
+}
+
+.head-left {
+	width: 320px;
+	height: 50px;
+	overflow: hidden;
+	float: left;
+	margin: 0px auto;
+	padding: 0px;
+}
+
+.head-right-b {
+	width: 350px;
+	height: 20px;
+	float: right;
+	overflow: hidden;
+	margin: 31px 10px auto auto;
+	padding: 0px;
+}

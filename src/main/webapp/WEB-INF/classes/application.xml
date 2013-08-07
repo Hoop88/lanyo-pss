@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+       
+	<import resource="classpath:/com/lanyotech/core/application.xml" />
+	<import resource="open-spring-transaction.xml"/>
+	<import resource="chat-app.xml" />
+	<import resource="dao.xml"/>
+	<import resource="service.xml"/>
+	
+	<bean id="propertryConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreResourceNotFound" value="true" />
+		<property name="locations">
+			<list>
+				<value>classpath:db.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+  <bean id="scriptLoader" class="com.lanyotech.core.service.impl.ScriptLoaderImpl"> 
+    <property name="servers"><list>
+    <value>http://demo.erpwin.com</value>
+    <value>http://www.erpwin.com</value>
+    <value>http://easyjf.erpwin.com</value>
+    </list></property> 
+    <property name="debug" value="true" />
+    <property name="offline" value="true" />
+    <property name="compress" value="false" />
+  </bean>
+  
+</beans>

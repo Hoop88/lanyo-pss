@@ -1,0 +1,32 @@
+<div xmlns:ext="http://www.extjs.com" class="body-wrap"><h1>Class <a href="source/core-override-3.2.html#cls-Ext.form.BasicForm">Ext.form.BasicForm</a></h1><table cellspacing="0"><tr><td class="label">Package:</td><td class="hd-info">Ext.form</td></tr><tr><td class="label">Defined In:</td><td class="hd-info">core-override-3.2.js</td></tr><tr><td class="label">Class:</td><td class="hd-info"><a href="source/core-override-3.2.html#cls-Ext.form.BasicForm">BasicForm</a></td></tr><tr><td class="label">Extends:</td><td class="hd-info">Object</td></tr></table><div class="description"><p>
+增加了在form表单中使用回车键在表单组件中按照指定的导航顺序导航的功能。
+并且可以使用方向键[UP][LEFT]反向导航。
+</p>
+<pre>
+<code><i>//示例:</i>
+{
+	xtype:<em>"form"</em>,
+	frame:true,
+	width:400,
+	height:300,
+	region: <em>'center'</em>,
+	<i>//自定义导航顺序</i>
+	navigationSequences:[<em>'name'</em>,<em>'email'</em>,<em>'password'</em>,<em>'bornDate'</em>],
+	<i>//开启回车导航</i>
+	enterNavigationKey:true,
+	items:[
+		{xtype:<em>'textfield'</em>,name:<em>'name'</em>},
+		{xtype:<em>'textfield'</em>,name:<em>'password'</em>,inputType:<em>'password'</em>},
+		{xtype:<em>'datefield'</em>,name:<em>'bornDate'</em>},
+		{xtype:<em>'textfield'</em>,vtype:<em>'email'</em>,name:<em>'email'</em>},
+		{xtype:<em>'textfield'</em>,name:<em>'other'</em>},
+	]
+}
+</pre></code>
+<p>
+回车导航在企业级应用中的表单中是很常用的功能。
+</p></div><div class="hr"></div><a id="Ext.form.BasicForm-configs"></a><h2>Config Options</h2><table cellspacing="0" class="member-table"><tbody><tr><th colspan="2" class="sig-header">Config Options</th><th class="msource-header">Defined By</th></tr><tr class="config-row  "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Ext.form.BasicForm-enterNavigationKey"></a><b><a href="source/core-override-3.2.html#cfg-Ext.form.BasicForm-enterNavigationKey">enterNavigationKey</a></b> : Boolean<div class="mdesc"></div></td><td class="msource">BasicForm</td></tr><tr class="config-row  "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Ext.form.BasicForm-navigationSequences"></a><b><a href="source/core-override-3.2.html#cfg-Ext.form.BasicForm-navigationSequences">navigationSequences</a></b> : Array<div class="mdesc"></div></td><td class="msource">BasicForm</td></tr></tbody></table><a id="Ext.form.BasicForm-props"></a><h2>Public Properties</h2><div class="no-members">This class has no public properties.</div><a id="Ext.form.BasicForm-methods"></a><h2>Public Methods</h2><table cellspacing="0" class="member-table"><tbody><tr><th colspan="2" class="sig-header">Method</th><th class="msource-header">Defined By</th></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Ext.form.BasicForm-clearData"></a><b><a href="source/core-override-3.2.html#method-Ext.form.BasicForm-clearData">clearData</a></b>()
+    :
+                                        void<div class="mdesc"><div class="short">把表单中所有字段设置为最原始的值，即通过initialConfig的value属性设置的值</div><div class="long">把表单中所有字段设置为最原始的值，即通过initialConfig的value属性设置的值<div class="mdetail-params"><strong>Parameters:</strong><ul><li>None.</li></ul><strong>Returns:</strong><ul><li>void</li></ul></div></div></div></td><td class="msource">BasicForm</td></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Ext.form.BasicForm-clearDirty"></a><b><a href="source/core-override-3.2.html#method-Ext.form.BasicForm-clearDirty">clearDirty</a></b>()
+    :
+                                        BasicForm<div class="mdesc"><div class="short">清除所有表单中所有组件的修改状态</div><div class="long">清除所有表单中所有组件的修改状态<div class="mdetail-params"><strong>Parameters:</strong><ul><li>None.</li></ul><strong>Returns:</strong><ul><li><code>BasicForm</code><div class="sub-desc"></div></li></ul></div></div></div></td><td class="msource">BasicForm</td></tr></tbody></table><a id="Ext.form.BasicForm-events"></a><h2>Public Events</h2><div class="no-members">This class has no public events.</div></div>

@@ -1,0 +1,26 @@
+<div xmlns:ext="http://www.extjs.com" class="body-wrap"><h1>Class <a href="source/core-3.2.html#cls-Lanyo_Ajax">Lanyo_Ajax</a></h1><table cellspacing="0"><tr><td class="label">Package:</td><td class="hd-info">Global</td></tr><tr><td class="label">Defined In:</td><td class="hd-info">core-3.2.js</td></tr><tr><td class="label">Class:</td><td class="hd-info"><a href="source/core-3.2.html#cls-Lanyo_Ajax">Lanyo_Ajax</a></td></tr><tr><td class="label">Extends:</td><td class="hd-info">Object</td></tr></table><div class="description">蓝源RIA框架基本设置，可以用来配置一些平台的功能特性
+在项目中会根据实际应用情况使用apply等方法来定制。
+<pre>
+<code><i>//例子：</i>
+Ext.apply(Lanyo_Ajax,{
+    permissionCheck:false,
+    extVersion:<em>'ext-3.2'</em>,
+    script:<em>'/demo-script'</em>,
+    PersonalityUrl:<em>"#"</em>,
+    formatUrl:<b>function</b>(baseUrl,cmd){
+        <b>return</b>  baseUrl+<em>"?cmd="</em>+cmd;
+    }
+});
+</pre>
+</code><br><br><i>This class is a singleton and cannot be created directly.</i></div><div class="hr"></div><a id="Lanyo_Ajax-props"></a><h2>Public Properties</h2><table cellspacing="0" class="member-table"><tbody><tr><th colspan="2" class="sig-header">Property</th><th class="msource-header">Defined By</th></tr><tr class="property-row  "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Lanyo_Ajax-PersonalityUrl"></a><b><a href="source/core-3.2.html#prop-Lanyo_Ajax-PersonalityUrl">PersonalityUrl</a></b> : String<div class="mdesc">RIA平台集成了个性化定制（包括皮肤，前台portal等）的前后台集成，如果要使用该个性化功能，该参数指定了个性化请求和保存地址</div></td><td class="msource">Lanyo_Ajax</td></tr><tr class="property-row  "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Lanyo_Ajax-extVersion"></a><b><a href="source/core-3.2.html#prop-Lanyo_Ajax-extVersion">extVersion</a></b> : String<div class="mdesc">指定RIA平台使用的EXTJS的代码版本。可选值目前有'ext-2.2'和'ext-3.2'</div></td><td class="msource">Lanyo_Ajax</td></tr><tr class="property-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Lanyo_Ajax-formatUrl"></a><b><a href="source/core-3.2.html#prop-Lanyo_Ajax-formatUrl">formatUrl</a></b> : String<div class="mdesc"><div class="short">RIA平台针对CRUD集成到CrudPanel和CrudListPanel中和后台请求关联的URL样式。&#13;
+for struts2的动态方法调用，使用：return baseUrl+"!"+cmd+".action"&#13;
+也可以定制自己...</div><div class="long">RIA平台针对CRUD集成到CrudPanel和CrudListPanel中和后台请求关联的URL样式。
+for struts2的动态方法调用，使用：return baseUrl+"!"+cmd+".action"
+也可以定制自己的请求样式。参考Demo</div></div></td><td class="msource">Lanyo_Ajax</td></tr><tr class="property-row  "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Lanyo_Ajax-namespace"></a><b><a href="source/core-3.2.html#prop-Lanyo_Ajax-namespace">namespace</a></b> : Object<div class="mdesc">lanyo框架,基本包</div></td><td class="msource">Lanyo_Ajax</td></tr><tr class="property-row  "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Lanyo_Ajax-permissionCheck"></a><b><a href="source/core-3.2.html#prop-Lanyo_Ajax-permissionCheck">permissionCheck</a></b> : Boolean<div class="mdesc">蓝源RIA平台是否开启权限检查。如果开启了权限检查，在使用CrudPanel或者CrudListPanel的时候，会向后台请求权限的判断</div></td><td class="msource">Lanyo_Ajax</td></tr><tr class="property-row  "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Lanyo_Ajax-permissionCheckAction"></a><b><a href="source/core-3.2.html#prop-Lanyo_Ajax-permissionCheckAction">permissionCheckAction</a></b> : String<div class="mdesc">如果开启了权限检查，这个参数用来指定请求权限判断的后台地址</div></td><td class="msource">Lanyo_Ajax</td></tr><tr class="property-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Lanyo_Ajax-script"></a><b><a href="source/core-3.2.html#prop-Lanyo_Ajax-script">script</a></b> : String<div class="mdesc"><div class="short">&#13;
+指定RIA平台延迟加载js的请求地址。如果是使用后台加载的话，该参数指定后台返回JS的地址，如果是前台加载js，则可以直接指定为js的地址&#13;
+例如：如果项目所有的js都放在/demo-script下&#13;
+那么这里就指定为script...</div><div class="long"><p>
+指定RIA平台延迟加载js的请求地址。如果是使用后台加载的话，该参数指定后台返回JS的地址，如果是前台加载js，则可以直接指定为js的地址
+例如：如果项目所有的js都放在/demo-script下
+那么这里就指定为script:'/demo-script',
+</p></div></div></td><td class="msource">Lanyo_Ajax</td></tr><tr class="property-row  "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Lanyo_Ajax-title"></a><b><a href="source/core-3.2.html#prop-Lanyo_Ajax-title">title</a></b> : String<div class="mdesc">蓝源RIA平台的名称</div></td><td class="msource">Lanyo_Ajax</td></tr><tr class="property-row  "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Lanyo_Ajax-version"></a><b><a href="source/core-3.2.html#prop-Lanyo_Ajax-version">version</a></b> : String<div class="mdesc">蓝源RIA平台的版本号</div></td><td class="msource">Lanyo_Ajax</td></tr></tbody></table><a id="Lanyo_Ajax-methods"></a><h2>Public Methods</h2><div class="no-members">This class has no public methods.</div><a id="Lanyo_Ajax-events"></a><h2>Public Events</h2><div class="no-members">This class has no public events.</div></div>

@@ -1,0 +1,33 @@
+<div xmlns:ext="http://www.extjs.com" class="body-wrap"><h1>Class <a href="source/core-override-3.2.html#cls-Array">Array</a></h1><table cellspacing="0"><tr><td class="label">Package:</td><td class="hd-info">Global</td></tr><tr><td class="label">Defined In:</td><td class="hd-info">core-override-3.2.js</td></tr><tr><td class="label">Class:</td><td class="hd-info"><a href="source/core-override-3.2.html#cls-Array">Array</a></td></tr><tr><td class="label">Extends:</td><td class="hd-info">Object</td></tr></table><div class="description"></div><div class="hr"></div><a id="Array-props"></a><h2>Public Properties</h2><div class="no-members">This class has no public properties.</div><a id="Array-methods"></a><h2>Public Methods</h2><table cellspacing="0" class="member-table"><tbody><tr><th colspan="2" class="sig-header">Method</th><th class="msource-header">Defined By</th></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Array-contains"></a><b><a href="source/core-override-3.2.html#method-Array-contains">contains</a></b>(&nbsp;<code>Mixed&nbsp;obj</code>&nbsp;)
+    :
+                                        Boolean<div class="mdesc"><div class="short">判断obj在数组中是否存在</div><div class="long">判断obj在数组中是否存在<div class="mdetail-params"><strong>Parameters:</strong><ul><li><code>obj</code> : Mixed<div class="sub-desc">需要查找的值</div></li></ul><strong>Returns:</strong><ul><li><code>Boolean</code><div class="sub-desc"></div></li></ul></div></div></div></td><td class="msource">Array</td></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Array-distinct"></a><b><a href="source/core-override-3.2.html#method-Array-distinct">distinct</a></b>(&nbsp;<code>Boolean&nbsp;valid</code>&nbsp;)
+    :
+                                        Array<div class="mdesc"><div class="short">过滤掉数组中重复的对象，返回过滤后的新数组&#13;
+&#13;
+//例子：&#13;
+var arr = ['abc','abc','123','234','',''];&#13;
+var newarr = arr.distinct(true);&#13;
+console...</div><div class="long">过滤掉数组中重复的对象，返回过滤后的新数组
+<pre>
+<code><i>//例子：</i>
+<b>var</b> arr = [<em>'abc'</em>,<em>'abc'</em>,<em>'123'</em>,<em>'234'</em>,<em>''</em>,<em>''</em>];
+<b>var</b> newarr = arr.distinct(true);
+console.debug(newarr);<i>//out:[<em>"abc"</em>, <em>"123"</em>, <em>"234"</em>]</i>
+</pre>
+</code><div class="mdetail-params"><strong>Parameters:</strong><ul><li><code>valid</code> : Boolean<div class="sub-desc">是否过滤掉数组中的空对象</div></li></ul><strong>Returns:</strong><ul><li><code>Array</code><div class="sub-desc">返回一个全新的数组</div></li></ul></div></div></div></td><td class="msource">Array</td></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Array-isEmpty"></a><b><a href="source/core-override-3.2.html#method-Array-isEmpty">isEmpty</a></b>()
+    :
+                                        Boolean<div class="mdesc"><div class="short">判断数组是否为空</div><div class="long">判断数组是否为空<div class="mdetail-params"><strong>Parameters:</strong><ul><li>None.</li></ul><strong>Returns:</strong><ul><li><code>Boolean</code><div class="sub-desc"></div></li></ul></div></div></div></td><td class="msource">Array</td></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Array-removeAt"></a><b><a href="source/core-override-3.2.html#method-Array-removeAt">removeAt</a></b>(&nbsp;<code>Number&nbsp;index</code>&nbsp;)
+    :
+                                        void<div class="mdesc"><div class="short">根据数组索引删除数组中的元素</div><div class="long">根据数组索引删除数组中的元素<div class="mdetail-params"><strong>Parameters:</strong><ul><li><code>index</code> : Number<div class="sub-desc"></div></li></ul><strong>Returns:</strong><ul><li>void</li></ul></div></div></div></td><td class="msource">Array</td></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Array-removeKey"></a><b><a href="source/core-override-3.2.html#method-Array-removeKey">removeKey</a></b>(&nbsp;<code>String/Number&nbsp;keyValue</code>,&nbsp;<code>String/Number&nbsp;keyName</code>&nbsp;)
+    :
+                                        void<div class="mdesc"><div class="short">根据数组中对象元素的某字段值删除数组中的元素&#13;
+&#13;
+//例子：&#13;
+var arr = [{id:1,name:'zhangsan'},{id:2,name:'wangwu'},{id:3,name:'lisi'}];&#13;
+arr.rem...</div><div class="long">根据数组中对象元素的某字段值删除数组中的元素
+<pre>
+<code><i>//例子：</i>
+<b>var</b> arr = [{id:1,name:<em>'zhangsan'</em>},{id:2,name:<em>'wangwu'</em>},{id:3,name:<em>'lisi'</em>}];
+arr.removeKey(3,<em>'id'</em>);<i>//现在要删除lishi </i>
+</pre>
+</code><div class="mdetail-params"><strong>Parameters:</strong><ul><li><code>keyValue</code> : String/Number<div class="sub-desc">删除对应属性的值</div></li><li><code>keyName</code> : String/Number<div class="sub-desc">删除对应属性</div></li></ul><strong>Returns:</strong><ul><li>void</li></ul></div></div></div></td><td class="msource">Array</td></tr></tbody></table><a id="Array-events"></a><h2>Public Events</h2><div class="no-members">This class has no public events.</div></div>

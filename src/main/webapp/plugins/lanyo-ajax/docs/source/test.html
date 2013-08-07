@@ -1,0 +1,97 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
+  <title>The source code</title>
+    <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+</head>
+<body  onload="prettyPrint();">
+    <pre class="prettyprint lang-js">Ext.apply(Ext, {
+			copyTo : function(b, c, d) {
+				if (Ext.isString(d)) {
+					d = d.split(/[,;\s]/)
+				}
+				Ext.each(d, function(a) {
+							if (c.hasOwnProperty(a)) {
+								b[a] = c[a]
+							}
+						}, this);
+				return b
+			},
+			destroyMembers : function(o, b, c, d) {
+				for (var i = 1, a = arguments, len = a.length; i < len; i++) {
+					Ext.destroy(o[a[i]]);
+					delete o[a[i]]
+				}
+			},
+			clean : function(a) {
+				var b = [];
+				Ext.each(a, function(v) {
+							if (!!v) {
+								b.push(v)
+							}
+						});
+				return b
+			},
+			unique : function(a) {
+				var b = [], collect = {};
+				Ext.each(a, function(v) {
+							if (!collect[v]) {
+								b.push(v)
+							}
+							collect[v] = true
+						});
+				return b
+			},
+			flatten : function(b) {
+				var c = [];
+				function rFlatten(a) {
+					Ext.each(a, function(v) {
+								if (Ext.isArray(v)) {
+									rFlatten(v)
+								} else {
+									c.push(v)
+								}
+							});
+					return c
+				}
+				return rFlatten(b)
+			},
+			pluck : function(a, b) {
+				var c = [];
+				Ext.each(a, function(v) {
+							c.push(v[b])
+						});
+				return c
+			},
+			pluckFn : function(a, b) {
+				var c = [], val;
+				Ext.each(a, function(v) {
+							if (v.get) {
+								c.push(v.get(b))
+							} else {
+								c.push(window.undefined)
+							}
+						});
+				return c
+			},
+			intercept : function(o, a, b, c) {
+				o[a] = o[a].createInterceptor(b, c)
+			},
+			sequence : function(o, a, b, c) {
+				o[a] = o[a].createSequence(b, c)
+			},
+			invoke : function(a, b) {
+				var c = [], args = Array.prototype.slice.call(arguments, 2);
+				Ext.each(a, function(v, i) {
+							if (v && Ext.isFunction(v[b])) {
+								c.push(v[b].apply(v, args))
+							} else {
+								c.push(undefined)
+							}
+						});
+				return c
+			}
+		});</pre>    
+</body>
+</html>

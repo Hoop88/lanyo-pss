@@ -1,0 +1,12 @@
+{
+	errors:null,
+	success:true,
+	data:{
+		name : '姚欣' ,
+		sex : 1,
+		age : '25',
+		dept : {id:1,name:'开发部'},
+		nowDate : new Date(),
+		remark : '我是labelField加载来的数据，我可以在labelField中显示数据!'
+	}
+}

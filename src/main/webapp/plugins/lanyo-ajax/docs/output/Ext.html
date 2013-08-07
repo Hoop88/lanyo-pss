@@ -1,0 +1,69 @@
+<div xmlns:ext="http://www.extjs.com" class="body-wrap"><h1>Class <a href="source/core-override-3.2.html#cls-Ext">Ext</a></h1><table cellspacing="0"><tr><td class="label">Package:</td><td class="hd-info">Global</td></tr><tr><td class="label">Defined In:</td><td class="hd-info">core-override-3.2.js</td></tr><tr><td class="label">Class:</td><td class="hd-info"><a href="source/core-override-3.2.html#cls-Ext">Ext</a></td></tr><tr><td class="label">Extends:</td><td class="hd-info">Object</td></tr></table><div class="description"><br><br><i>This class is a singleton and cannot be created directly.</i></div><div class="hr"></div><a id="Ext-props"></a><h2>Public Properties</h2><div class="no-members">This class has no public properties.</div><a id="Ext-methods"></a><h2>Public Methods</h2><table cellspacing="0" class="member-table"><tbody><tr><th colspan="2" class="sig-header">Method</th><th class="msource-header">Defined By</th></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Ext-copyToIf"></a><b><a href="source/core-override-3.2.html#method-Ext-copyToIf">copyToIf</a></b>(&nbsp;<code>Object&nbsp;target</code>,&nbsp;<code>Object&nbsp;source</code>,&nbsp;<code>String/Array&nbsp;notFields</code>&nbsp;)
+    :
+                                        void<div class="mdesc"><div class="short">拷贝源对象中的属性到目标对象中,不会拷贝notFields中的属性&#13;
+&#13;
+//例子：&#13;
+var target = {name:'张三',age:20};&#13;
+var source = {name:'李四',age:22,sex:'男',...</div><div class="long">拷贝源对象中的属性到目标对象中,不会拷贝notFields中的属性
+<pre>
+<code><i>//例子：</i>
+<b>var</b> target = {name:<em>'张三'</em>,age:20};
+<b>var</b> source = {name:<em>'李四'</em>,age:22,sex:<em>'男'</em>,remark:<em>'我是李四里面remark属性的值'</em>}};
+Ext.copyToIf(target,source,<em>"name,age"</em>);
+console.dir(target); <i>//out : {name:<em>'张三'</em>,age:20,sex:<em>'男'</em>,remark:<em>'我是source里面remark属性的值'</em>}}</i></code>
+</pre><div class="mdetail-params"><strong>Parameters:</strong><ul><li><code>target</code> : Object<div class="sub-desc">拷贝的目标对象</div></li><li><code>source</code> : Object<div class="sub-desc">拷贝的源对象</div></li><li><code>notFields</code> : String/Array<div class="sub-desc">{String/Array} 不会拷贝的字段</div></li></ul><strong>Returns:</strong><ul><li>void</li></ul></div></div></div></td><td class="msource">Ext</td></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Ext-del"></a><b><a href="source/core-override-3.2.html#method-Ext-del">del</a></b>(&nbsp;<code>Object&nbsp;o</code>,&nbsp;<code>String/Array&nbsp;args</code>&nbsp;)
+    :
+                                        void<div class="mdesc"><div class="short">删除对象中的某个属性&#13;
+&#13;
+//例子： &#13;
+var o = {name:'zhangsan',age:20,sex:'男'};&#13;
+Ext.del(o,'age','sex');&#13;
+console.debug(o); // age和se...</div><div class="long">删除对象中的某个属性
+<pre>
+<code><i>//例子： </i>
+<b>var</b> o = {name:<em>'zhangsan'</em>,age:20,sex:<em>'男'</em>};
+Ext.del(o,<em>'age'</em>,<em>'sex'</em>);
+console.debug(o); <i>// age和sex被删除了 </i>
+<i>//out : {name:<em>'zhangsan'</em>}</i></code>
+</pre><div class="mdetail-params"><strong>Parameters:</strong><ul><li><code>o</code> : Object<div class="sub-desc">目标对象</div></li><li><code>args</code> : String/Array<div class="sub-desc">需要删除的属性</div></li></ul><strong>Returns:</strong><ul><li>void</li></ul></div></div></div></td><td class="msource">Ext</td></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Ext-formatMoney"></a><b><a href="source/core-override-3.2.html#method-Ext-formatMoney">formatMoney</a></b>(&nbsp;<code>Number&nbsp;value</code>,&nbsp;<code>Number&nbsp;num</code>&nbsp;)
+    :
+                                        Number<div class="mdesc"><div class="short">格式化金额</div><div class="long">格式化金额<div class="mdetail-params"><strong>Parameters:</strong><ul><li><code>value</code> : Number<div class="sub-desc">要格式的数字</div></li><li><code>num</code> : Number<div class="sub-desc">保留几位小数</div></li></ul><strong>Returns:</strong><ul><li><code>Number</code><div class="sub-desc"></div></li></ul></div></div></div></td><td class="msource">Ext</td></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Ext-getObjVal"></a><b><a href="source/core-override-3.2.html#method-Ext-getObjVal">getObjVal</a></b>(&nbsp;<code>Object&nbsp;o</code>,&nbsp;<code>String&nbsp;v</code>&nbsp;)
+    :
+                                        Mixed<div class="mdesc"><div class="short">获取对象中的某个属性值,  v 支持以&ldquo;.&rdquo;导航&#13;
+&#13;
+//例子: &#13;
+var user = {name:'张三',dept:{name:'开发部'}}&#13;
+var name = Ext.getObjVal(user,'dept.nam...</div><div class="long">获取对象中的某个属性值,  v 支持以“.”导航
+<pre>
+<code><i>//例子: </i>
+<b>var</b> user = {name:<em>'张三'</em>,dept:{name:<em>'开发部'</em>}}
+<b>var</b> name = Ext.getObjVal(user,<em>'dept.name'</em>);
+alert(name); <i>// <em>'开发部'</em></i></code>
+</pre><div class="mdetail-params"><strong>Parameters:</strong><ul><li><code>o</code> : Object<div class="sub-desc">目标对象</div></li><li><code>v</code> : String<div class="sub-desc">要获取的属性名称，支持对象.导航</div></li></ul><strong>Returns:</strong><ul><li><code>Mixed</code><div class="sub-desc">得到的属性值</div></li></ul></div></div></div></td><td class="msource">Ext</td></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Ext-objPcount"></a><b><a href="source/core-override-3.2.html#method-Ext-objPcount">objPcount</a></b>(&nbsp;<code>Object&nbsp;o</code>&nbsp;)
+    :
+                                        Number<div class="mdesc"><div class="short">获取一个对象拥有属性的个数&#13;
+&#13;
+//例子 : &#13;
+var o = {name:'sss',age:29}&#13;
+alert(Ext.objPcount(o));//2&#13;
+&#13;
+</div><div class="long">获取一个对象拥有属性的个数
+<pre>
+<code><i>//例子 : </i>
+<b>var</b> o = {name:<em>'sss'</em>,age:29}
+alert(Ext.objPcount(o));<i>//2</i>
+</pre>
+</code><div class="mdetail-params"><strong>Parameters:</strong><ul><li><code>o</code> : Object<div class="sub-desc">待查找的对象</div></li></ul><strong>Returns:</strong><ul><li><code>Number</code><div class="sub-desc">拥有属性的个数</div></li></ul></div></div></div></td><td class="msource">Ext</td></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Ext-pluckRecord"></a><b><a href="source/core-override-3.2.html#method-Ext-pluckRecord">pluckRecord</a></b>(&nbsp;<code>Array&nbsp;arr</code>,&nbsp;<code>String&nbsp;prop</code>&nbsp;)
+    :
+                                        Array<div class="mdesc"><div class="short">获取Record数组中 每个Record某字段的值&#13;
+&#13;
+//例子:&#13;
+var records=grid.getStore().getRanage();&#13;
+var props=Ext.pluckRecord(records,"id")...</div><div class="long">获取Record数组中 每个Record某字段的值
+<pre>
+<code><i>//例子:</i>
+<b>var</b> records=grid.getStore().getRanage();
+<b>var</b> props=Ext.pluckRecord(records,<em>"id"</em>);
+console.debug(props);
+</pre>
+</code><div class="mdetail-params"><strong>Parameters:</strong><ul><li><code>arr</code> : Array<div class="sub-desc">Ext.data.Record 数组</div></li><li><code>prop</code> : String<div class="sub-desc">Record中的某字段</div></li></ul><strong>Returns:</strong><ul><li><code>Array</code><div class="sub-desc"></div></li></ul></div></div></div></td><td class="msource">Ext</td></tr></tbody></table><a id="Ext-events"></a><h2>Public Events</h2><div class="no-members">This class has no public events.</div></div>

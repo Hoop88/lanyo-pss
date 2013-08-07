@@ -1,0 +1,29 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
+  <title>The source code</title>
+    <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+</head>
+<body  onload="prettyPrint();">
+    <pre class="prettyprint lang-js">Ext.onReady(function(){
+	var tabpanel = new Ext.TabPanel({
+		activeTab : 0,
+		minTabWidth : 100,
+		resizeTabs : true,
+		enableTabScroll : true,
+		plugins : [new EasyJF.Ext.TabPanelPlugin()],
+		items : [
+			{title : 'tab1',html:'tab1 content'},
+			{title : 'tab2',closable:true,html:'tab2 content'},
+			{title : 'tab3',closable:true,html:'tab3 content'},
+			{title : 'tab4',closable:true,html:'tab4 content'},
+			{title : 'tab5',closable:true,html:'tab5 content'}
+		],
+		width : 500 , height : 300,
+		renderTo : 'examples'
+	});
+},this);
+</pre>    
+</body>
+</html>

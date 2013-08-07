@@ -1,0 +1,180 @@
+.dd-arrow-down.dd-arrow-down-invisible {
+	display: none;
+	visibility: hidden;
+}
+.dd-arrow-down {
+	background-image: url(../images/core/dd-arrow-down.gif);
+	display: block;
+	visibility: visible;
+	z-index: 20000;
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	top: 0;
+	left: 0;
+}
+.x-form-trigger.search {
+	border:none;
+	background: url(../images/lanyo-ajax/search.png) no-repeat center center!important;
+}
+/************************************************icon********************************************/
+.refresh{
+	background: url("../images/lanyo-ajax/refresh.gif") no-repeat !important;
+}
+.connect{
+	background: url("../images/lanyo-ajax/connect.png") no-repeat !important;
+}
+.view{
+	background: url("../images/lanyo-ajax/view.png") no-repeat !important;
+}
+
+.reset{
+	background: url("../images/icons/arrow_undo.png") no-repeat !important;
+	
+}
+
+.upload-icon {
+	background: url(../images/lanyo-ajax/upload.png) no-repeat 3px 3px
+		!important;
+}
+
+.relating {
+	background: url( ../images/lanyo-ajax/icons.gif) no-repeat -3px -340px
+		!important;
+}
+
+.save {
+	background: url(../images/lanyo-ajax/save.png) no-repeat 0 2px !important;
+}
+.reset{
+	
+}
+
+.clean {
+	background: url(../images/lanyo-ajax/exit.png) no-repeat 0 2px !important;
+}
+
+.auditing {
+	background: url(../images/lanyo-ajax/auditing.png) no-repeat 0 2px
+		!important;
+}
+
+.recycle {
+	background: url(../images/lanyo-ajax/recycle.png) no-repeat 0 2px
+		!important;
+}
+
+.review {
+	background: url(../images/lanyo-ajax/review.gif) no-repeat 0 2px
+		!important;
+}
+
+.excel {
+	background: url(../images/lanyo-ajax/excel.png) no-repeat 0 2px !important
+		;
+}
+
+.add {
+	background: url(../images/lanyo-ajax/add.png) no-repeat 0 1px !important;
+}
+
+.edit {
+	background: url(../images/lanyo-ajax/edit.png) no-repeat 0 1px !important;
+}
+
+.view {
+	background: url(../images/lanyo-ajax/view.png) no-repeat 0 1px !important;
+}
+.down {
+	background: url(../images/lanyo-ajax/down.gif) no-repeat 0 1px !important;
+}
+.pic {
+	background: url(../images/lanyo-ajax/picture.png) no-repeat 0 1px !important;
+}
+
+.f5 {
+	background: url(../images/lanyo-ajax/f5.png) no-repeat 0 1px !important;
+}
+
+.delete {
+	background: url(../images/lanyo-ajax/delete.png) no-repeat 0 1px
+		!important;
+}
+
+.search {
+	background: url(../images/lanyo-ajax/search.png) no-repeat 0 2px
+		!important;
+}
+
+.search-icon {
+	background: url( ../images/lanyo-ajax/icons.gif ) no-repeat -3px -1px
+		!important;
+}
+
+.search-icon2 {
+	background: url( ../images/lanyo-ajax/icons.gif ) no-repeat -3px -1px
+		!important;
+}
+
+.advance-search-icon {
+	background: url( ../images/lanyo-ajax/icons.gif) no-repeat -3px -736px
+		!important;
+}
+
+.intro {
+	background: url(../images/lanyo-ajax/intro.png) no-repeat 0 2px !important
+		;
+}
+
+.export-icon {
+	background: url( ../images/lanyo-ajax/icons.gif ) no-repeat -3px -403px
+		!important;
+}
+
+.import-icon {
+	background: url( ../images/lanyo-ajax/icons.gif ) no-repeat -3px -307px
+		!important;
+}
+
+.print-icon {
+	background: url( ../images/lanyo-ajax/icons.gif ) no-repeat -3px -773px
+		!important;
+}
+
+.remove-icon {
+	background: url( ../images/lanyo-ajax/icons.gif ) no-repeat -3px -202px
+		!important;
+}
+
+.confirm-icon {
+	background: url( ../images/lanyo-ajax/icons.gif ) no-repeat -3px -272px
+		!important;
+}
+
+.signContract-icon {
+	background: url( ../images/lanyo-ajax/icons.gif ) no-repeat -3px -109px
+		!important;
+}
+.srsearch {
+	background: url(../images/lanyo-ajax/srsearch.gif) no-repeat 0 2px
+		!important;
+}
+.move {
+	background: url(../images/lanyo-ajax/move.png) no-repeat 0 1px
+		!important;
+}
+.chart {
+	background: url(../images/lanyo-ajax/chart_bar.png) no-repeat 0 1px
+		!important;
+}
+.chartPic {
+	background: url(../images/lanyo-ajax/chart_pie.png) no-repeat 0 1px
+		!important;
+}
+.magnifier{
+	background: url(../images/lanyo-ajax/zoom.png) no-repeat 0 1px!important;
+}
+.chartPic-icon {
+	background: url(../images/lanyo-ajax/chart_pie.png) no-repeat 0 5px
+		!important;
+}

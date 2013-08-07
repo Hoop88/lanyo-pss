@@ -1,0 +1,15 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	version="1.0">
+	<persistence-unit name="app-unit" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jar-file>WEB-INF\lib\application-core-2.0.jar</jar-file>
+		<!-- <jar-file>file:/E:\Workspaces\pss\code\src\main\webapp\WEB-INF\lib\application-core-2.0.jar</jar-file> -->
+		<properties>
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.EhCacheProvider" />
+			<property name="hibernate.cache.use_query_cache" value="false" />
+			<property name="hibernate.ejb.naming_strategy" value="com.lanyotech.core.dao.LocalNamingStrategy" />
+		</properties>
+	</persistence-unit>
+</persistence>

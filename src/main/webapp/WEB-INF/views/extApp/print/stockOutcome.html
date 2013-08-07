@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>${title}</title>
+		<link rel="stylesheet" type="text/css" href="stylesheet/print.css"/>
+    </head>
+    <H3 style="text-align:center;">${title}</H3>
+    <body>
+		<table class="info" width="800" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="label">编号:</td><td class="value">${stockOutcome.sn}</td>
+				<td class="label">单据类型:</td><td class="value">${title}</td>
+				<td class="label">客户:</td><td class="value">${stockOutcome.client.name}</td>
+			</tr>
+		</table>
+		
+        <table width="800" border="0" cellspacing="0" cellpadding="0" style="margin-top:5px;text-align:left;">
+            <tr><th>ID</th><th>产品编号</th><th>产品名称</th><th>产品价格</th><th>数量</th><th>合计</th></tr>
+			#foreach( $item in ${stockOutcome.items} )
+				<tr><td style="margin-top:5px;text-align:left;">$!item.id</td><td style="margin-top:5px;text-align:left;">$!item.product.sn</td><td style="margin-top:5px;text-align:left;">$!item.product.name</td><td style="margin-top:5px;text-align:left;">$!item.salePrice</td><td style="margin-top:5px;text-align:left;">$!item.num</td><td style="margin-top:5px;text-align:left;">$!item.saleAmount</td></tr>
+			#end
+        </table>
+		
+		<table class="info" width="800" border="0" cellspacing="0" cellpadding="0" style="margin-top:5px;">
+			<tr>
+				<td class="label">仓库:</td><td class="value">$!{stockOutcome.depot.name}</td>
+				<td class="label">审核人:</td><td class="value">$!{stockOutcome.auditor.trueName}</td>
+				<td class="label">日期:</td><td class="value">$!CommUtil.formatDate("yyyy-MM-dd",$!stockOutcome.vdate)</td>
+			</tr>
+		</table>
+		
+		<div style="text-align:center;margin-top:30px;"><input value="打印数据" type="button" onclick="this.style.display='none';window.print();this.style.display='';" /></div>
+		
+    </body>
+</html>

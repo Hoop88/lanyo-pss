@@ -1,0 +1,28 @@
+eclipse 中修改 M2_REPO的值
+从eclipse中增加了maven2的插件之后，maven默认的本地库的路径是${user}/.m2/repository/下，一般windows用户的操作系统都安装在C盘，所以这个目录 下的jar包比较危险。我尝试从myeclipse->preferences->java->build path->classpath variables中查找M2_REPO这个变量，发现其路径指向的是“C:/Documents and Settings/lvxda/.m2/repository/”，我想修改其路径为：d:/m2/repository,可是这个变量的编辑按钮是灰色的，不可编辑。从网上也没有找到相应的解决 办法。打算自己尝试一下：
+
+1、手动创建本地仓库的地址为：d:/m2/repository
+
+2、从windows的环境变量中增加了：M2_REPO=d:/m2/repository，同时把这个变量增加到path变量中。
+
+3、修改d:/maven/conf/setting.xml文件，在<localRepository>节点下新增一行：
+
+代码:<localRepository>d:/m2/repository</localRepository>
+表示本地仓库的地址为：d:/m2/repository。
+
+4、从myeclipse->preferences->maven->installations下add一个已经安装到d盘的 maven，如：d:/maven，并勾选此新加项。并点击下面的browse按钮打开maven的全局配置文件,如：d:/maven/conf /setting.xml。
+
+5、从myeclipse->preferences->maven->installations下修改user setting 选项为：D:/m2/repository/settings.xml，并点击update settings。并点击下面的reindex按钮更新索引。
+
+6、点击配置窗口的apply按钮，突出配置窗口。
+
+7、配置修改后，myeclise会自动更新索引，当完成后重启myeclipse，会发现M2_REPO变量的值变成了d:/m2/repository。
+
+自此，maven从远程库下载的jar包都会放到d:/m2/repository下。
+
+
+
+
+%JAVA_HOME%;
+D:\tools\apache-maven-3.0.3\bin;
+%M2_REPO%;

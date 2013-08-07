@@ -1,0 +1,206 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
+  <title>The source code</title>
+    <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+</head>
+<body  onload="prettyPrint();">
+    <pre class="prettyprint lang-js">Ext.onReady(function(){
+	var Util = EasyJF.Ext.Util;
+	var form = new Ext.FormPanel({
+		title : '员工表单',
+		width : 800,
+		renderTo : 'example',
+		bodyStyle:'padding:5px;',
+		items : [{
+					xtype:"fieldset",
+					autoHeight:true,
+					items:[
+					Util.oneColumnPanelBuild(
+							{name : "employee",hiddenName : "employee",fieldLabel : '对应用户'},
+							Util.buildRemoteCombox("talentTank","人才库导入","talentTank.ejf?cmd=autocompleteList",["id","userName","sn"],"userName","id",true),
+							{
+								fieldLabel : "入职时间",
+								name : "joinTime",
+								xtype : "datefield",
+								format : "Y-m-d",
+								width : 159
+							}
+					),
+					Util.oneColumnPanelBuild({
+						fieldLabel : "工作岗位",
+						name : "workStation"
+					},
+					Util.buildCombox("workType","工作方式",[["专职", "专职"], ["兼职", "兼职"]],"",true),
+						{
+							fieldLabel : "工作地点",
+							name : "workPlace"
+						}
+					)]
+			},{
+				xtype:"fieldset",
+				//title:"基本情况",
+				frame:true,
+				autoHeight:true,
+				defaults:{xtype:"textfield"},
+				items:[
+					{name : "id",xtype : "hidden"}, 
+					{name : "pic",xtype : "hidden"}, 	
+				{
+					xtype:"panel",
+					layout:"column",
+					border : false,
+					items:[
+				{xtype:"fieldset",autoHeight:true,border:false,columnWidth:.75,items:[
+					Util.twoColumnPanelBuild(
+				{
+					fieldLabel : "姓名",
+					name : "userName",
+					allowBlank:false
+				},{
+					fieldLabel : "档案编号",
+					name : "sn"
+				},
+				 Util.buildCombox("sex","性别",[["男", "男"], ["女", "女"]],"",true),{
+					fieldLabel : "身份证号",
+					name : "identity"
+				},{
+					fieldLabel : "联系电话",
+					name : "contactPhone",
+					allowBlank:false
+				}, {
+					fieldLabel : "联系地址",
+					name : "contactAddress"
+				}, {
+					fieldLabel : "出生日期",
+					name : "birthDay",
+					xtype : "datefield",
+					format : "Y-m-d"
+				},
+				Util.buildCombox("birthdayType","生日类型",[["阳历",0],["阴历",1],0]),
+				{
+						fieldLabel : "电子邮件",
+						name : "email",
+						vtype : "email",
+						vtypeText : "不是一个有效的email",
+						emptyText : "请输入有效的email地址",									
+						xtype : 'textfield'
+				}, {
+					xtype : "textfield",
+					fieldLabel : '视力',
+					name : "eyesight"
+				}, {
+					xtype : "textfield",
+					fieldLabel : '身高',
+					name : "height"
+				}, {
+					xtype : "textfield",
+					fieldLabel : '体重',
+					name : "weight"
+				},
+				{
+					fieldLabel : "现居住地",
+					name : "address",									
+					xtype : 'textfield'
+				},
+				{
+					xtype : "textfield",
+					fieldLabel : '血型',
+					name : "blood"
+				}, {
+					xtype : "textfield",
+					fieldLabel : '健康状况',
+					name : "health"
+				},
+				{
+					fieldLabel : '婚姻状况',
+					name : "isMarriage",
+					xtype : "combo",
+					hiddenName : "isMarriage",
+					displayField : "title",
+					valueField : "value",
+					store : new Ext.data.SimpleStore({
+						fields : ['title', 'value'],
+						data : [["未婚", "未婚"], ["已婚", "已婚"], ["离异", "离异"], ["丧偶", "丧偶"]]
+					}),
+					editable : false,
+					mode : 'local',
+					triggerAction : 'all',
+					emptyText : '请选择...'
+				},
+				{
+					fieldLabel : '政治面貌',
+					name : "politics",
+					xtype : "combo",
+					hiddenName : "politics",
+					displayField : "title",
+					valueField : "value",
+					store : new Ext.data.SimpleStore({
+						fields : ['title', 'value'],
+						data : [["团员", "团员"], ["党员", "党员"]]
+					}),
+					editable : false,
+					mode : 'local',
+					triggerAction : 'all',
+					emptyText : '请选择...'
+				})
+			]},{
+					border:false,xtype:"fieldset",labelWidth : 60,autoHeight:true,columnWidth:.25,
+					items:[
+							{
+								xtype:"fieldset",title:"个人照片",labelWidth : 60,autoHeight:true,
+								items:[
+									{height:160,
+									id:"photoBox",
+									autoScroll:true,
+									html : '<img id="photo" src="" width="150" height="160" />'
+								}]
+							},{
+								layout : "form",
+								border : false,
+								items:{
+									anchor : '100%',
+									xtype : 'fileuploadfield',
+									//xtype : 'textfield',
+									emptyText : '单击右侧上传按钮选择文件......',
+									fieldLabel : '上传照片',
+									name : 'pic',
+									buttonCfg : {
+										text : '',
+										iconCls : 'upload-icon'
+									}
+								}
+							}
+					]}]
+				}]
+			},
+			{
+				xtype:"fieldset",
+				autoHeight:true,
+				items:[
+					Util.oneColumnPanelBuild({
+							xtype : "labelfield",
+							fieldLabel : "用户名",
+							name : "name"
+						}, {
+							xtype : "labelfield",
+							fieldLabel : "所在部门",
+							name : "dept"
+						}, {
+							xtype : "labelfield",
+							fieldLabel : "职务",
+							name : "duty"
+						},{
+							xtype : "labelfield",
+							fieldLabel : "电话",
+							name : "tel"
+						})
+				]
+			
+			}
+		]
+	});
+});</pre>    
+</body>
+</html>

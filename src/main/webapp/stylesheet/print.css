@@ -1,0 +1,96 @@
+@media print {
+.Noprint{display:none;}
+}
+@media print {
+.HidePrint{ visibility:hidden;}
+}
+@media print {      
+.PageNext{page-break-after: always;} 
+}
+@media print {  
+.TdCs1 {
+        border:solid windowtext 1.0pt;
+}
+}
+@media print {  
+.TdCs2 {
+        border:solid windowtext 1.0pt; border-left:none;
+}
+}
+@media print {  
+.TdCs3 {
+        border-top:none;
+        border-left:solid windowtext 1.0pt;
+        border-bottom:solid windowtext 1.0pt;
+          border-right:solid windowtext 1.0pt;
+}
+}
+@media print {  
+.TdCs4 {
+        border-top:none;
+        border-left:none;
+        border-bottom:solid windowtext 1.0pt;
+        border-right:solid windowtext 1.0pt;
+}
+}
+@media print {  
+.underline {
+        border-top-style: none;
+        border-right-style: none;
+        border-bottom-style: solid;
+        border-left-style: none;
+        border-bottom-color: #000000;
+}   
+} 
+
+@media print {  
+.PrintHideTable {
+        BORDER-TOP: #FFFFFF 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #FFFFFF 1px solid; TEXT-ALIGN: center; margin:0px auto;
+}   
+}  
+
+@media print {  
+.PrintHideTd {
+    BORDER-RIGHT: #FFFFFF 1px solid;
+	LINE-HEIGHT: 20px;
+	BORDER-BOTTOM: #FFFFFF 1px solid;
+	background-color:#FFFFFF;
+	background:#FFFFFF
+}   
+}   
+
+@media print {  
+.PrintHide {
+	color:#FFFFFF;
+	background:#FFFFFF
+}   
+}   
+
+H3 {
+	FONT-SIZE: 20px;
+	
+}
+TABLE {
+	BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 0px solid;BORDER-RIGHT: #000000 0px solid; TEXT-ALIGN: center; margin:0px auto;
+}
+TR {
+	
+}
+TD {
+	BORDER-RIGHT: #000000 0px solid;
+	LINE-HEIGHT: 20px;
+	BORDER-BOTTOM: #000000 1px solid;
+	text-align: right;
+}
+
+thead{ background:#CCC; font-weight:900 }
+
+#word {
+}
+.word {
+	margin-left: 400px;
+}
+.table{
+border:none;width:100%;
+}
+.td {border-bottom:none;text-align:right;}

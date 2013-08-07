@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="plugins/extjs/ext-3.2/resources/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="plugins/extjs/ext-3.2/ux/css/ux-all.css" />
+#if(${personality.style})<link id="extSkin"  rel="stylesheet" type="text/css" href="plugins/extjs/ext-3.2/resources/css/$!{personality.style}.css"/>#end
+#if(${personality.style})
+	<link id="sysSkin" rel="stylesheet" type="text/css" href="stylesheet/skin/$!{personality.style}.css"/>
+#else
+	<link id="sysSkin" rel="stylesheet" type="text/css" href="stylesheet/skin/default.css"/>
+#end
+
+
+<link rel="stylesheet" type="text/css" href="stylesheet/icon.css" />
+<!--<link rel="stylesheet" type="text/css" href="stylesheet/ext-patch.css" />
+--><link rel="stylesheet" type="text/css" href="stylesheet/portal.css" />
+<link rel="stylesheet" type="text/css" href="plugins/lanyo-ajax/resources/css/lanyo-core.css" />
+<style type="text/css">
+a{ text-decoration:none; color:#000033 }
+.link{
+font-weight:bold;
+padding:6px 0 0 -2px;
+line-height:25px;
+}
+</style>
+
+<title>应用程序</title>
+</head>
+<body style="font-size:12px">
+	<div id="loading-mask" style=""></div>
+  <div id="loading">
+    <div style="text-align:center;padding-top:25%"><img src="/images/extanim32.gif" width="32" height="32" style="margin-right:8px;" align="absmiddle"/>Loading......</div>
+  </div>
+ #if(!$script)
+  #set($script = ($appClass+".js"))
+ #end
+<script type="text/javascript" src="plugins/lanyo-ajax/Global.js"></script>
+<script type="text/javascript" src="plugins/extjs/ext-3.2/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="plugins/extjs/ext-3.2/ext-all.js"></script>
+<script type="text/javascript" src="plugins/lanyo-ajax/ux-all.js"></script>
+<!--因为专注，所以专业-->
+<!--Java培训,ExtJS培训,Sencha技术咨询,富客户端技术培训及咨询,JavaEE高级应用技术咨询及培训服务，找蓝源信息技术www.lanyotech.com!-->
+<!--
+<script type="text/javascript" src="plugins/lanyo-ajax/core-override-3.2-min.js"></script>
+<script type="text/javascript" src="plugins/lanyo-ajax/core-plugin-3.2-min.js"></script>
+<script type="text/javascript" src="plugins/lanyo-ajax/core-util-3.2-min.js"></script>
+<script type="text/javascript" src="plugins/lanyo-ajax/core-3.2-min.js"></script>
+-->
+<script type="text/javascript" src="plugins/lanyo-ajax/core-all.js"></script>
+
+#if(${personality.lang})<script type="text/javascript" src="plugins/extjs/ext-3.2/lang/ext-lang-$!{personality.lang}.js"></script>#end
+
+<script type="text/javascript" src="FusionCharts/JSClass/FusionCharts.js"></script>
+<script type="text/javascript" src="extApp.ejf?cmd=loadScript&script=commonService.js"></script>
+<script type="text/javascript" src="extApp.ejf?cmd=loadScript&script=commonServiceERP.js"></script>
+<script type="text/javascript" src="FusionCharts/JSClass/FusionCharts.js"></script>
+<script type="text/javascript" src="plugins/fckeditor/fckeditor.js"></script>
+<script type="text/javascript" src="extApp.ejf?cmd=loadScript&script=$!{script}"></script>
+#foreach($info in $otherScriptList)
+<script type="text/javascript" src="$!info"></script>
+#end
+
+<script>
+Ext.BLANK_IMAGE_URL = '/plugins/extjs/ext-3.2/resources/images/default/s.gif';
+Ext.QuickTips.init();
+Ext.onReady(function(){
+	var app;
+	#if($appClass)
+	app=new ${appClass}(); 
+	#else 
+	app=new ${script}();	
+	#end
+	Ext.get('loading').remove();
+	Ext.get('loading-mask').fadeOut( {
+			remove : true
+		});		
+		
+	if(window.parent && window.parent.IFrames){
+	window.parent.IFrames["${appClass}"]=app;	
+	}
+	if(app.list && (typeof app.list=="function"))app=app.list();
+	if(app.onWindowResize){
+		app.show();
+	}
+	else{
+		new Ext.Viewport({layout:"fit",items:app});
+	}
+	
+});
+
+</script>
+
+</body>
+</html>

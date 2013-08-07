@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="../../extjs/ext-3.2/resources/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="../../../stylesheet/icon.css" />
+<link rel="stylesheet" type="text/css" href="../../../stylesheet/ext-patch.css" />
+<link rel="stylesheet" type="text/css" href="../resources/css/lanyo-core.css" /> 
+<style type="text/css">
+* {
+	font-size: 12px;
+}
+
+.x-tab-strip-inner span.x-tab-strip-text {
+	font-size: 12px;
+}
+
+a {
+	text-decoration: none;
+	color: #000033
+}
+
+.link {
+	font-weight: bold;
+	padding: 6px 0 0 -2px;
+	line-height: 25px;
+}
+
+.myMsg {
+	background: #FEEDFE;
+	margin: 4px 0;
+	color: #FF00FF;
+	font: 12px "宋体"
+}
+
+.yourMsg {
+	background: #E1E1E1;
+	margin: 4px 0;
+	color: blue;
+	font: 12px "宋体"
+}
+
+.user {
+	background: url("images/user.gif") no-repeat 1px 2px;
+}
+
+.im {
+	background: url("images/im.jpg") no-repeat 1px 2px;
+}
+
+.key {
+	background: url("images/key.gif") no-repeat 1px 2px;
+}
+
+.key,.user {
+	background-color: #FFFFFF;
+	padding-left: 20px;
+	font-weight: bold;
+	color: #000033;
+}
+
+.intro {
+	background-image: url(/images/core/intro.png) !important;
+}
+
+body {
+	margin: 0px 0px;
+}
+
+.banner {
+	width: 100%;
+	height: 73px;
+	background: url(../../../images/skin/default/banner.gif) repeat-x center;
+	margin: 0px auto;
+	padding: 0px;
+	overflow: hidden;
+}
+
+.banner-pic {
+	width: 100%;
+	height: 73px;
+	margin: 0px auto auto auto;
+	padding: 0px;
+	overflow: hidden;
+	background: url(../../../images/skin/default/banner-pic.gif) no-repeat center
+		bottom;
+}
+
+.head-right {
+	width: 400px;
+	height: 73px;
+	overflow: hidden;
+	float: right;
+	margin: 0px auto;
+	padding: 0px;
+}
+
+.head-right-t {
+	width: 383px;
+	height: 21px;
+	float: right;
+	overflow: hidden;
+	margin: 0px auto auto auto;
+	padding: 0px;
+	background: url(images/skin/default/head-right-t.gif);
+}
+
+.head-left {
+	width: 320px;
+	height: 50px;
+	overflow: hidden;
+	float: left;
+	margin: 0px auto;
+	padding: 0px;
+}
+
+.lian {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.lian:hover {
+	text-decoration: none;
+	color: #0000FF;
+}
+
+.head-right-b {
+	width: 350px;
+	height: 20px;
+	float: right;
+	overflow: hidden;
+	margin: 31px 10px auto auto;
+	padding: 0px;
+}
+
+.x-panel-mc {
+      font-family: Helvetica, Arial, sans-serif !important;
+  }
+  
+  #all-demos {
+
+  }
+  #all-demos dd {
+      cursor:pointer;
+      float:left;
+      height:100px;
+      margin:5px 5px 5px 10px;
+      width:300px;
+      zoom:1;
+  }
+  #all-demos dd img {
+      border: 1px solid #ddd;
+      float:left;
+      height:90px;
+      margin:5px 0 0 5px;
+      width:120px;
+  }
+
+  #all-demos dd div {
+      float:left;
+      margin-left:10px;
+      width:160px;
+  }
+
+  #all-demos dd h4 {
+      color:#555;
+      font-size:11px;
+      font-weight:bold;
+  }
+  #all-demos dd p {
+      color:#777;
+  }
+  #all-demos dd.over {
+      background: #F5FDE3 url(shared/extjs/images/sample-over.gif) no-repeat;
+  }
+  #loading-mask{
+      background-color:white;
+      height:100%;
+      position:absolute;
+      left:0;
+      top:0;
+      width:100%;
+      z-index:20000;
+  }
+  #loading{
+      height:auto;
+      position:absolute;
+      left:45%;
+      top:40%;
+      padding:2px;
+      z-index:20001;
+  }
+  #loading a {
+      color:#225588;
+  }
+  #loading .loading-indicator{
+      background:white;
+      color:#444;
+      font:bold 13px Helvetica, Arial, sans-serif;
+      height:auto;
+      margin:0;
+      padding:10px;
+  }
+  #loading-msg {
+      font-size: 10px;
+      font-weight: normal;
+  }
+
+  #all-demos .x-panel-body {
+      background-color:#fff;
+      border:1px solid;
+      border-color:#fafafa #fafafa #fafafa #fafafa;
+  }
+  #sample-ct {
+      border:1px solid;
+      border-color:#dadada #ebebeb #ebebeb #dadada;
+      padding:2px;
+  }
+
+  #all-demos h2 {
+      border-bottom: 2px solid #99bbe8;
+      cursor:pointer;
+      padding-top:6px;
+  }
+  #all-demos .x-panel-tl{
+  	border-bottom: none;
+  }
+  #all-demos h2 div {
+      background:transparent url(images/group-expand-sprite.gif) no-repeat 3px -47px;
+      color:#3764a0;
+      font:bold 11px Helvetica, Arial, sans-serif;
+      padding:4px 4px 4px 17px;
+  }
+  #all-demos .collapsed h2 div {
+      background-position: 3px 3px;
+  }
+  #all-demos .collapsed dl {
+      display:none;
+  }
+  .x-window {
+      text-align:left;
+  }
+  #all-demos dd h4 span.new-sample{
+      color: red;
+  }
+
+  #all-demos dd h4 span.updated-sample{
+      color: blue;
+  }
+
+</style>
+<title>蓝源RIA Framework示例应用</title>
+</head>
+<body>
+<div id="loading-mask"></div>
+<div id="loading">
+  <div class="loading-indicator"><img src="../../lanyo-ajax/resources/images/core/extanim32.gif" style="margin-right:8px;" align="absmiddle"/><span id="loading-msg">Loading...</span></div>
+</div>
+<script type="text/javascript">document.getElementById('loading-msg').innerHTML="Load ext Js and lanyo Core...";</script>
+<script type="text/javascript" src="../../extjs/ext-3.2/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="../../extjs/ext-3.2/ext-all.js"></script>
+<script type="text/javascript" src="../../lanyo-ajax/core-override-3.2.js"></script>
+<script type="text/javascript" src="../../lanyo-ajax/core-util-3.2.js"></script>
+<script type="text/javascript" src="../../lanyo-ajax/core-plugin-3.2.js"></script>
+<script type="text/javascript" src="../../lanyo-ajax/core-3.2.js"></script>
+<script type="text/javascript" src="../../lanyo-ajax/examples/data.js"></script>
+<script type="text/javascript">
+	Ext.apply(Lanyo_Ajax,{
+		title:"蓝源Ajax快速开发框架",
+	    permissionCheck:false,
+	    script:'demo-script',
+	    permissionCheckAction:"permissionCheck.ejf",
+	    PersonalityUrl:"",
+	    formatUrl:function(baseUrl,cmd){
+	        return baseUrl+"?cmd="+cmd;
+	    }
+	});
+</script>
+<script type="text/javascript">document.getElementById('loading-msg').innerHTML="Load System Core Script...";</script>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src=init.js></script>
+
+<!--为一切开源人服务、整合开源资源，架设起开源生产者和消费者之间的桥梁!
+学习开源技术，支持开源，奉献力量，开源的星空将因您而璀璨夺目!-->
+
+
+<div id="header" class="x-hidden">
+<div id='banner-id' class="banner">
+<div id='banner-pic-id', class="banner-pic">
+<div class="head-left"><img id='logo' src="../../../images/skin/default/logo.png" width="320" height="50"></div>
+</div>
+</div><!--"banner"结束-->
+</div>
+<div id="msgPanel" style="position: absolute; left: 0; top: 0;" />
+</body>
+</html>

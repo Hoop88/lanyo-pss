@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>蓝源进销存迷你版-登录页面</title>
+<link rel="stylesheet" type="text/css" href="stylesheet/login.css" />
+<link rel="stylesheet" type="text/css"
+	href="plugins/extjs/ext-3.2/resources/css/ext-all.css" />
+<link rel="stylesheet" type="text/css"
+	href="plugins/extjs/ext-3.2/ux/css/ux-all.css" />
+<link rel="stylesheet" type="text/css" href="stylesheet/icon.css" />
+<link rel="stylesheet" type="text/css" href="stylesheet/ext-patch.css" />
+
+<script type="text/javascript"
+	src="plugins/extjs/ext-3.2/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="plugins/extjs/ext-3.2/ext-all.js"></script>
+<script type="text/javascript" src="plugins/lanyo-ajax/ux-all-debug.js"></script>
+
+<style type="text/css">
+#loading-mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 110%;
+	z-index: 20000;
+	background-color: white;
+}
+
+#loading {
+	z-index: 999999;
+	height: auto;
+	font: bold 13px tahoma, arial, helvetica;
+	text-align: center;
+	margin-top: 200px;
+}
+</style>
+<script language="javascript">
+	Ext
+			.onReady(function() {
+				var fields = [];
+				Ext.fly('saveUserName').dom.checked = Ext.util.Cookies
+						.get('saveUserName');
+
+				var specialkeyHanlder = function(f, e) {
+					if (e.ENTER == e.getKey()) {
+						for ( var i = 0; i < fields.length; i++) {
+							var field = fields[i];
+							if (field && !field.validate()) {
+								field.focus();
+								return;
+							}
+						}
+						login();
+					}
+				}
+
+				var userName = new Ext.form.TextField({
+					width : 132,
+					name : "j_username",
+					id : 'j_username',
+					allowBlank : false,
+					renderTo : 'username',
+					value:"admin"
+				});
+				fields.push(userName);
+				var password = new Ext.form.TextField({
+					width : 132,
+					name : "j_password",
+					id : 'j_password',
+					allowBlank : false,
+					inputType : "password",
+					renderTo : 'password',
+					value:"admin",
+					listeners : {
+						specialkey : specialkeyHanlder
+					}
+				});
+				fields.push(password);
+				var randomCode = new Ext.form.TextField({
+					width : 67,
+					id : 'j_randomCode',
+					name : "randomCode",
+					style : 'margin-top:-1px;margin-left:3px;',
+					allowBlank : false,
+					renderTo : 'randomCode',
+					listeners : {
+						specialkey : specialkeyHanlder
+					}
+				});
+				fields.push(randomCode);
+
+				var langText = {
+					'zh-CN' : '系统',
+					'en-US' : 'System'
+				};
+				var langCss = {
+					'zh-CN' : 'x-flag-zh-CN',
+					'en-US' : 'x-flag-en'
+				};
+				var langCombo = new Ext.create({
+					xtype : 'iconcombo',
+					valueField : 'id',
+					renderTo : 'lang',
+					hiddenName : 'lang',
+					width : 120,
+					iconClsField : 'icon',
+					displayField : 'text',
+					mode : 'local',
+					editable : false,
+					triggerAction : 'all',
+					value : null,
+					store : new Ext.data.SimpleStore({
+						fields : [ 'id', 'text', 'icon' ],
+						data : [
+								[ null, langText[navigator.language||"zh-CN"],
+										langCss[navigator.language||"zh-CN"]],
+								[ 'zh_CN', '中国', 'x-flag-zh-CN' ],
+								[ 'en', 'English', 'x-flag-en' ] ]
+					})
+				});
+				fields.push(randomCode);
+
+				if (!Ext.isEmpty(Ext.util.Cookies.get('username'))) {
+					userName.setValue(Ext.util.Cookies.get('username'));
+					password.focus();
+				} else {
+					userName.focus();
+				}
+				function login() {
+					var form = Ext.getDom('loginForm');
+					Ext.Ajax
+							.request({
+								url : 'login.ejf?cmd=checkLogin',
+								form : form,
+								method : 'post',
+								success : function(req) {
+									var opt = Ext.decode(req.responseText);
+									if (opt.success) {
+										var saveUserName = Ext
+												.fly("saveUserName").dom;
+										Ext.util.Cookies.set('saveUserName',
+												saveUserName.checked);
+										if (saveUserName.checked) {
+											Ext.util.Cookies.set('username',
+													Ext.get('j_username')
+															.getValue());
+										}
+										Ext
+												.getBody()
+												.createChild(
+														{
+															id : 'loading-mask',
+															cn : {
+																id : 'loading',
+																cn : {
+																	tag : 'img',
+																	align : "middle",
+																	style : "margin-right: 8px;"
+																}
+															}
+														});
+										window.location.href = 'manage.ejf';
+									} else {
+										Ext.Msg
+												.show({
+													icon : Ext.Msg.ERROR,
+													title : '警告',
+													msg : opt.errors.msg,
+													buttons : Ext.Msg.OK,
+													fn : function() {
+														reset();
+														setTimeout(
+																function() {
+																	Ext
+																			.get('saveUserName').dom.checked = !!Ext.util.Cookies
+																			.get('saveUserName');
+																	Ext
+																			.get(
+																					'j_username')
+																			.focus(
+																					false);
+																}, 1);
+
+													}
+												});
+									}
+								}
+							});
+				}
+				var reset = function() {
+					var form = Ext.getDom('loginForm');
+					Ext.each([ 'j_username', 'j_password', 'j_randomCode' ],
+							function(id) {
+								Ext.getDom(id).value = '';
+							});
+					setTimeout(function() {
+						Ext.get('j_username').focus(false);
+					}, 1);
+				}
+				Ext.get("submit-img").on('click', login, this);
+				Ext.get("reset-img").on('click', reset, this);
+			});
+</script>
+</head>
+
+<body>
+<div class="box">
+<form method="post" id="loginForm">
+<div class="box-main">
+<div class="box-text"><span style="font-size: 45px;">Lanyo-PSS</span>
+<span class="title-a">&nbsp;蓝源进销存迷你版</span><br />
+<a href="http://www.lanyotech.com" target="_blank" style="text-decoration:none"><span style="font-size: 32px; color:#FFF; ">http://www.lanyotech.com</span></a><br />
+<span class="title-b">Lanyo EDP Demo App</span><br />
+<p><a href="http://www.lanyotech.com" target="_blank" style="text-decoration:none;color:#FFF"><span class="title-c">成都蓝源信息技术有限公司</span></a><br />
+<span class="title-d">Chengdu Lanyo Co.,Ltd.</span></p>
+</div>
+<!--"box-text"end-->
+<div class="box-login">
+<table cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="20%">用户名：</td>
+		<td colspan="2" id="username"></td>
+	</tr>
+	<tr>
+		<td>密&#8195;码：</td>
+		<td colspan="2" id="password"></td>
+	</tr>
+	<tr>
+		<td>验证码：</td>
+		<td colspan="2" align="center"><img style="float: left;"
+			src="randomCode.ejf" alt="验证码" />
+		<div id="randomCode" style="float: left; display: inline;"></div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2"><input id="saveUserName" name="saveUserName"
+			type="checkbox" value="" /> <span>记住用户登录名</span></td>
+		<td colspan="1" id="lang"></td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td>
+		<div class="button-is"><font><a id="submit-img"
+			class="hui" href="#">登&nbsp;&nbsp;录</a></font></div>
+		</td>
+		<td>
+		<div class="button-is"><font><a id="reset-img"
+			class="hui" href="#">重&nbsp;&nbsp;置</a></font></div>
+		</td>
+	</tr>
+</table>
+</div>
+<!--"box-login"end--></div>
+<!--"box-main"end--></form>
+</div>
+<!--"box"end-->
+</body>
+</html>

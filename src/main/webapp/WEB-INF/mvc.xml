@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<easyjf-web>
+	<framework-setting>
+		<error-handler>
+			<app-class exception="javax.persistence.PersistenceException">com.lanyotech.exeception.PersistenceAjaxInvokeExceptionHandler</app-class>
+		</error-handler>
+		
+		<property name="com.easyjweb.debug">false</property><!--调试模式，每次加载都会重新初始化EasyJWeb -->
+		<property name="com.easyjweb.maxUploadFileSize">51200</property><!--最大上传文件为51200kb -->
+		<property name="com.easyjweb.uploadSizeThreshold">512</property><!--上传文件缓存值 -->
+		<property name="com.easyjweb.permissionVerify">true</property><!--自动检测权限 -->
+		<property name="com.easyjweb.defaultActionPackages">
+			com.lanyotech.pps.mvc
+			com.lanyo.ria.web,
+			com.easyjweb.action,
+			com.lanyotech.core.mvc.ajax,
+			com.lanyotech.security.mvc,
+			com.lanyotech.chat.mvc,
+			com.lanyo.ria.samples.action,
+		</property><!--设置自加Action扫描的路径，根据你的情况调整 -->
+	</framework-setting>
+	<beans>
+		<bean name="riaExceptionHandler" class="com.lanyotech.pps.exception.RiaExceptionHandler" />
+		
+		<bean name="springContainer"
+			class="org.springframework.web.context.support.XmlWebApplicationContext">
+			<property name="configLocations">
+				<list>
+					<value>WEB-INF/classes/application.xml</value>
+				</list>
+			</property>
+		</bean>
+		<bean name="innerSpringContainer" class="com.easyjf.container.impl.SpringContainer">
+			<property name="factory" ref="springContainer" />
+		</bean>
+	</beans>
+
+</easyjf-web>
+
+

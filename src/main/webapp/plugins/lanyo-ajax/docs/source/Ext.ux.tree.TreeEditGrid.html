@@ -1,0 +1,91 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
+  <title>The source code</title>
+    <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+</head>
+<body  onload="prettyPrint();">
+    <pre class="prettyprint lang-js">Ext.onReady(function(){
+		var treeedit = new Ext.ux.tree.TreeEditGrid({
+			rootVisible:false,
+			enableHdMenu : false,
+			border : false,
+			columns:[
+				{
+					dataIndex:'text',header:'部门名称',width:180,
+					editor : new Ext.form.TextField()
+				},
+				{
+					dataIndex:'id',header:'编号',width:180,
+					editor : new Ext.form.TextField()
+				},
+				{
+					dataIndex:'icon',header:'图标',width:180,
+					editor : new Ext.form.TextField()
+				}
+			],
+			loader : new Ext.tree.TreeLoader({
+				url : 'data/tree.json'
+			}),
+			root : new Ext.tree.AsyncTreeNode({
+				text : 'root',
+				expanded : true,
+				baseAttrs:{singleClickExpand:true}
+			})
+			//,renderTo : 'example'
+		});
+		var boxPanel = new Ext.Panel({
+			width : 900,
+			height : 400,
+			layout : 'hbox',
+			renderTo : 'example',
+			title : 'TreeEditGrid',
+			layoutConfig:{align : 'stretch'},
+			tbar : [
+				{
+					text : '获取修改的值',
+					handler:function(){
+						var nodes = [];
+						var innHTML = "" ;
+						treeedit.getRootNode().cascade(function(node){
+							var data = Ext.copyToIf({},node.attributes,['uiProvider','loader','children'])
+							if(node.isUpdate){
+								innHTML += Ext.encode(data)+"<br/>";
+								nodes.push(data);
+							}
+						},this);
+						boxPanel.updateNodeInfo.update(innHTML);
+						var obj = Ext.obj2Arr(nodes);
+						// console.debug(obj); 
+						/*
+						 * Ext.Ajax.request({
+						 *  url : 'requestUrl' ,
+						 * 	params : obj,
+						 *  success:function(){
+						 *  	alert('提交成功!');
+						 *  }
+						 * });
+						 */
+					}
+				}
+			],
+			bodyStyle:'padding:1px;',
+			items:[
+				{
+					flex : 1,
+					layout : 'fit',
+					items : treeedit
+				},
+				{
+					ref:'updateNodeInfo',
+					width : 400,
+					autoScroll : true,
+					layout : 'fit'
+				}
+			]
+		});
+},this);
+</pre>    
+</body>
+</html>

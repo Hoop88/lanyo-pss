@@ -1,0 +1,107 @@
+/* --------------- Ext CSS -------------- */ /* Ext 2.0 */
+.x-window-footer {
+	position: relative;
+	top: 0;
+	right: 0;
+}
+
+.x-tab-strip span.x-tab-strip-text {
+	font-size: 12px;
+}
+
+.x-panel-header {
+	font-size: 12px;
+}
+
+.x-tree-node {
+	font-size: 12px;
+}
+
+.x-grid3-row {
+	cursor: default;
+	border: 1px solid #CEDFF7;
+	width: 100%;
+}
+
+.x-grid3-hd-row TD {
+	font-size: 12px;
+}
+
+.x-grid3-row TD {
+	font-size: 12px;
+	LINE-HEIGHT: 16px;
+}
+
+.x-tip .x-tip-bd {
+	font-size: 12px;
+}
+
+.x-tip h3 {
+	font-size: 12px;
+}
+
+.x-tip .x-tip-bd-inner {
+	font-size: 12px;
+}
+
+.x-panel-tl .x-panel-header {
+	FONT: normal 12px tahoma, arial, verdana, sans-serif;
+}
+
+.x-form-field {
+	FONT: 12px tahoma, arial, helvetica, sans-serif
+}
+
+.x-small-editor .x-form-field {
+	FONT: 12px tahoma, arial, helvetica, sans-serif
+}
+
+.x-combo-list-item {
+	FONT: 12px tahoma, arial, helvetica, sans-serif;
+}
+
+.x-menu-list-item {
+	FONT: 12px tahoma, arial, sans-serif;
+}
+
+.x-window-tl .x-window-header {
+	FONT: bold 12px tahoma, arial, verdana, sans-serif;
+}
+
+.ext-ie .x-form-text {
+	margin-top: 1px;
+}  /* the textField missing bottom line */
+.x-form-item {
+	FONT: 12px tahoma, arial, helvetica, sans-serif
+}
+
+.x-grid-group-hd DIV {
+	FONT: bold 12px tahoma, arial, helvetica, sans-serif;
+}
+
+.x-btn-text-icon .x-btn-center .x-btn-text {
+	background-position: 0pt 2px;
+	background-repeat: no-repeat;
+	padding: 3px 0pt 2px 18px;
+}
+
+.ext-gecko .x-btn button {
+	padding-left: 0pt;
+	padding-right: 0pt;
+}
+
+.x-btn button {
+	font-size: 12px;
+	margin-top: -1px;
+}
+
+.x-grid33-row-selected {
+	background: #86E8F6 !important;
+	border: 1px dotted #a3bae9;
+}
+
+.x-grid2-row-red {
+	font-weight: bold;
+	color: red;
+}
+/* END */

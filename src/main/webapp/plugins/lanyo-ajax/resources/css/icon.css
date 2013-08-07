@@ -1,0 +1,267 @@
+/*
+ * FileUploadField component styles
+ */
+.x-form-file-wrap {
+	position: relative;
+	height: 22px;
+}
+
+.x-form-file-wrap .x-form-file {
+	position: absolute;
+	right: 0;
+	-moz-opacity: 0;
+	filter: alpha(opacity :   0);
+	opacity: 0;
+	z-index: 2;
+	height: 22px;
+}
+
+.x-form-file-wrap .x-form-file-btn {
+	position: absolute;
+	right: 0;
+	z-index: 1;
+}
+
+.x-form-file-wrap .x-form-file-text {
+	position: absolute;
+	left: 0;
+	z-index: 3;
+	color: #777;
+}
+
+.upload-icon {
+	background: url(../images/lanyo-ajax/upload.png) no-repeat 3px 3px
+		!important;
+}
+
+.relating {
+	background: url( ../images/lanyo-ajax/icons.gif) no-repeat -3px -340px
+		!important;
+}
+
+.save {
+	background: url(../images/lanyo-ajax/save.png) no-repeat 0 2px !important;
+}
+
+.clean {
+	background: url(../images/lanyo-ajax/exit.png) no-repeat 0 2px !important;
+}
+
+.auditing {
+	background: url(../images/lanyo-ajax/auditing.png) no-repeat 0 2px
+		!important;
+}
+
+.recycle {
+	background: url(../images/lanyo-ajax/recycle.png) no-repeat 0 2px
+		!important;
+}
+.review {
+	background: url(../images/lanyo-ajax/review.gif) no-repeat 0 2px
+		!important;
+}
+.excel {
+	background: url(../images/lanyo-ajax/excel.png) no-repeat 0 2px !important
+		;
+}
+.down {
+	background: url(../images/lanyo-ajax/down.gif) no-repeat 0 2px !important;
+}
+.pic {
+	background: url(../images/lanyo-ajax/picture.png) no-repeat 0 2px !important;
+}
+
+.f5 {
+	background: url(../images/lanyo-ajax/f5.png) no-repeat 0 2px !important;
+}
+
+.delete {
+	background: url(../images/lanyo-ajax/delete.png) no-repeat 0 2px
+		!important;
+}
+
+.search {
+	background: url(../images/lanyo-ajax/search.png) no-repeat 0 2px
+		!important;
+}
+.srsearch {
+	background: url(../images/lanyo-ajax/srsearch.gif) no-repeat 0 2px
+		!important;
+}
+.search-icon {
+	url("../images/lanyo-ajax/icons.gif") no-repeat scroll -2px -3px transparent !important
+}
+
+.search-icon2 {
+	background: url( ../images/lanyo-ajax/icons.gif ) no-repeat -3px -1px
+		!important;
+}
+
+.advance-search-icon {
+	background: url( ../images/lanyo-ajax/icons.gif) no-repeat -3px -736px
+		!important;
+}
+.intro {
+	background: url(../images/lanyo-ajax/intro.png) no-repeat 0 2px !important
+		;
+}
+.export-icon {
+	background: url( ../images/lanyo-ajax/icons.gif ) no-repeat -3px -403px
+		!important;
+}
+
+.import-icon {
+	background: url( ../images/lanyo-ajax/icons.gif ) no-repeat -3px -307px
+		!important;
+}
+
+.print-icon {
+	background: url( ../images/lanyo-ajax/icons.gif ) no-repeat -3px -773px
+		!important;
+}
+
+.remove-icon {
+	background: url( ../images/lanyo-ajax/icons.gif ) no-repeat -3px -202px
+		!important;
+}
+
+.confirm-icon {
+	background: url( ../images/lanyo-ajax/icons.gif ) no-repeat -3px -272px
+		!important;
+}
+
+.signContract-icon {
+	background: url( ../images/lanyo-ajax/icons.gif ) no-repeat -3px -109px
+		!important;
+}
+.icon-password {
+	background-image:url(../images/icons/sysSet.png) !important;
+}
+.treeroot-icon{
+	background: url( ../images/icons/root.gif) !important;
+}
+.record-icon {
+	background: url( ../images/lanyo-ajax/icons.gif ) no-repeat -3px -342px
+		!important;
+}
+
+.projectCreate-icon {
+	background: url( ../images/lanyo-ajax/icons.gif ) no-repeat -3px -575px
+		!important;
+}
+
+.projectProgress-icon {
+	background: url( ../images/lanyo-ajax/icons.gif ) no-repeat -3px -638px
+		!important;
+}
+
+.statistics {
+	background: url(../images/lanyo-ajax/statistics.png) no-repeat 0 2px
+		!important;
+}
+
+.cog_edit {
+	background: url(../images/icons/cog_edit.png) no-repeat 0 0!important;
+}
+.script_save {
+	background: url(../images/icons/script_save.png) no-repeat 0 0!important;
+}
+
+
+/*Ext-Grid-Packed-columnLock.js*/
+.x-grid3-viewport,.x-grid3-locked {
+	overflow: hidden;
+	position: absolute;
+}
+
+.x-grid3-locked .x-grid3-scroller {
+	overflow: hidden;
+	border-right: 1px solid #99BBE8;
+}
+
+.x-grid3-scroll-spacer {
+	height: 19px;
+}
+
+/*GroupHeaderPlugin.js*/
+td.ux-grid-hd-group-cell {
+	background:
+		url(../plugins/extjs/ext-2.2/resources/images/default/grid/grid3-hrow.gif)
+		repeat-x bottom;
+}
+
+td.ux-grid-hd-nogroup-cell .x-grid3-hd-inner {
+	background: none;
+}
+
+/*Ext.ux.plugins.HelpIcon*/
+.ux-helpicon-icon {
+	background-image: url(/images/lanyo-ajax/help.png) ! important;
+	cursor: help;
+}
+
+/* StatusBar word processor example styles */
+.x-status-text {
+	color: #777;
+}
+
+.x-status-text-panel .spacer {
+	width: 60px;
+	font-size: 0;
+	line-height: 0;
+}
+
+/*erpwin-public-icon*/
+.info-icon {
+	background-image: url(/images/lanyo-ajax/information.png) ! important;
+}
+
+/*Object-Select*/
+.object-select-icon {
+	background-image: url(/images/lanyo-ajax/search.png) ! important;
+	cursor: pointer;
+}
+
+/* [OPTIONAL] -- may be used for either Ext.grid.GroupSummary / Ext.ux.grid.GridSummary plugins */
+.x-grid3-summary-row {
+	border-left: 1px solid #fff;
+	border-right: 1px solid #fff;
+	color: #333;
+	background: #f1f2f4;
+}
+
+.x-grid3-summary-row .x-grid3-cell-inner {
+	font-weight: bold;
+	padding-bottom: 4px;
+}
+.x-grid-hide-summary .x-grid3-summary-row {
+	display: none;
+}
+
+.x-grid3-summary-msg {
+	padding: 4px 16px;
+	font-weight: bold;
+}
+
+/* [REQUIRED] (by Ext.ux.grid.GridSummary plugin) */
+.x-grid3-gridsummary-row-inner {
+	overflow: hidden;
+	width: 100%;
+}  /* IE6 requires width:100% for hori. scroll to work */
+.x-grid3-gridsummary-row-offset {
+	width: 10000px;
+}
+
+.x-grid-hide-gridsummary .x-grid3-gridsummary-row-inner {
+	display: none;
+}
+/*Tree Icon*/
+.x-tree-node-collapsed .lanyo-tree-node-icon {
+	background-image:url("/images/icons/tag_blue.gif")!important;
+}
+.x-tree-node-expanded .lanyo-tree-node-icon{
+	background-image:url("/images/icons/tag_blue.gif")!important;
+}
+.x-tree-node-leaf .lanyo-tree-node-icon{
+	background-image:url("/images/icons/tag_blue3.gif")!important;
+｝

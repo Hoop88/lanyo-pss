@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="plugins/extjs/ext-3.2/resources/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="plugins/extjs/ext-3.2/ux/css/ux-all.css" />
+#if(${personality.style})<link id="extSkin"  rel="stylesheet" type="text/css" href="plugins/extjs/ext-3.2/resources/css/$!{personality.style}.css"/>#end
+#if(${personality.style})
+	<link id="sysSkin" rel="stylesheet" type="text/css" href="stylesheet/skin/$!{personality.style}.css"/>
+#else
+	<link id="sysSkin" rel="stylesheet" type="text/css" href="stylesheet/skin/default.css"/>
+#end
+
+
+<link rel="stylesheet" type="text/css" href="stylesheet/icon.css" />
+<!--<link rel="stylesheet" type="text/css" href="stylesheet/ext-patch.css" />
+--><link rel="stylesheet" type="text/css" href="stylesheet/portal.css" />
+<link rel="stylesheet" type="text/css" href="plugins/lanyo-ajax/resources/css/lanyo-core.css" />
+#if(!${user})
+<script type="text/javascript">
+	window.location.href ="login.html"
+</script>
+#end
+<style type="text/css">
+* {
+	font-size: 12px;
+}
+
+.x-tab-strip-inner span.x-tab-strip-text {
+	font-size: 12px;
+}
+
+a {
+	text-decoration: none;
+	color: #000033
+}
+
+.link {
+	font-weight: bold;
+	padding: 6px 0 0 -2px;
+	line-height: 25px;
+}
+
+.myMsg {
+	background: #FEEDFE;
+	margin: 4px 0;
+	color: #FF00FF;
+	font: 12px "宋体"
+}
+
+.yourMsg {
+	background: #E1E1E1;
+	margin: 4px 0;
+	color: blue;
+	font: 12px "宋体"
+}
+
+.user {
+	background: url("images/icons/user.png") no-repeat 1px 2px;
+}
+.key {
+	background: url("images/icons/lock.png") no-repeat 1px 2px;
+}
+.im {
+	background: url("images/im.jpg") no-repeat 1px 2px;
+}
+.key,.user {
+	background-color: #FFFFFF;
+	padding-left: 20px;
+	font-weight: bold;
+	color: #000033;
+}
+
+.intro {
+	background-image: url(/images/core/intro.png) !important;
+}
+.lian {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.lian:hover {
+	text-decoration: none;
+	color: #0000FF;
+}
+
+#loading-mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 20000;
+	background-color: white;
+}
+
+#loading {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left:-250px;
+	margin-top:-150px;
+	padding: 2px;
+	z-index: 20001;
+	height: auto;
+}
+
+#loading img {
+	margin-bottom: 5px;
+}
+
+#loading .loading-indicator {
+	background: white;
+	color: #555;
+	font: bold 13px tahoma, arial, helvetica;
+	padding: 10px;
+	margin: 0;
+	text-align: center;
+	height: auto;
+}
+</style>
+<title>蓝源蓝源存迷你版-LanoEDP平台示例应用</title>
+</head>
+<body>
+<div id="loading-mask"></div>
+<div id="loading">
+  <div class="loading-indicator"><img id="loading-msg"/></div>
+</div>
+<script type="text/javascript">
+	/*var loadings =[
+		"loading.gif",
+		"loading-address.gif",
+		"loading-anti-rubbish.gif",
+		"loading-enclosure.gif",
+		"loading-fox.gif"
+	];*/
+	var loadings=[
+		"loading_1.jpg",
+		"loading_2.jpg",
+		"loading_3.jpg",
+		"loading_4.jpg",
+		"loading_5.jpg"
+	];
+	var imgIndex = parseInt(Math.random()*100)%loadings.length;
+	var loadImg = loadings[imgIndex];
+	//var img = new Image(); img.src = "images/loading/"+loadImg;
+	document.getElementById('loading-msg').src="images/loading/"+loadImg;
+</script>
+<script type="text/javascript" src="plugins/lanyo-ajax/Global.js"></script>
+<script type="text/javascript" src="plugins/extjs/ext-3.2/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="plugins/extjs/ext-3.2/ext-all.js"></script>
+<script type="text/javascript" src="plugins/lanyo-ajax/ux-all.js"></script>
+<!--
+<script type="text/javascript" src="plugins/lanyo-ajax/core-override-3.2.js"></script>
+<script type="text/javascript" src="plugins/lanyo-ajax/core-plugin-3.2.js"></script>
+<script type="text/javascript" src="plugins/lanyo-ajax/core-util-3.2.js"></script>
+<script type="text/javascript" src="plugins/lanyo-ajax/core-3.2.js"></script>
+-->
+<script type="text/javascript" src="plugins/lanyo-ajax/core-all.js"></script>
+<script type="text/javascript" src="FusionCharts/JSClass/FusionCharts.js"></script>
+<script type="text/javascript" src="plugins/lanyo-ajax/portal.js"></script>
+<script type="text/javascript" src="plugins/fckeditor/fckeditor.js"></script>
+#if(${personality.lang})<script type="text/javascript" src="plugins/extjs/ext-3.2/lang/ext-lang-$!{personality.lang}.js"></script>#end
+<script type="text/javascript">
+	Global.User = {name : "$!{user.name}",id:"$!{user.id}",trueName:"$!{user.trueName}"}
+	Ext.apply(Lanyo_Ajax,{
+		title:"蓝源Ajax快速开发框架",
+	   // script:'demo-script',
+	    permissionCheck:true,
+	    sysSkinPath : 'stylesheet/skin/',
+	    permissionCheckAction:"permissionCheck.ejf",
+	    PersonalityUrl:"manage.ejf",
+	    formatUrl:function(baseUrl,cmd){
+	       return baseUrl+"?cmd="+cmd;
+	    }
+	});
+	if('$!{personality.homePage}')
+		Lanyo_Ajax.setCfg('homePage','$!{personality.homePage}');
+</script>
+<script type="text/javascript" src="extApp.ejf?cmd=loadScript&script=commonService.js"></script>
+<script type="text/javascript" src="extApp.ejf?cmd=loadScript&script=commonServiceERP.js"></script>
+<script type="text/javascript" src="extApp.ejf?cmd=loadScript&script=menu.js"></script>
+<!--因为专注，所以专业-->
+<!--Java培训,ExtJS培训,Sencha技术咨询,富客户端技术培训及咨询,JavaEE高级应用技术咨询及培训服务，找蓝源信息技术www.lanyotech.com!-->
+<div id="header" class="x-hidden">
+<div id='banner-id' class="banner">
+<div id='banner-pic-id', class="banner-pic">
+<div class="head-left"><div class='syslogo'></div></div>
+<div class="head-right">
+<div id='head-right-t-id' class="head-right-t">
+<table width="383"  border="0" cellpadding="0" cellspacing="0" style="margin-top:2px; color:#FFFFFF; font-size:12px; line-height:16px;">
+  <tr>
+  	<td width="36">&nbsp</td>
+    <td width="48"><a class="lian" href="#" #if(!$!ROLE.is("Supplier"))onclick="onlineWindow.show();"#end>企业IM</a></td>
+    <td width="57"><a class="lian" href="#" onclick="javascript:{var win=new SystemConfigWindow();win.show();}">系统设置</a></td>
+    <td width="57"><a class="lian" href="#" onclick="changePassword()">修改密码</a></td>
+    <td width="51"><a class="lian" href="#" onclick="logout()">注销用户</a></td>
+    <td width="58">选择风格</td>
+	<td width="14"><a href="#" ext:skin="ext-all"><img src="plugins/lanyo-ajax/resources/images/lanyo-ajax/square.gif" border="0" title="默认"></a></td>
+	<td width="15"><a href="#" ext:skin="xtheme-gray"><img src="plugins/lanyo-ajax/resources/images/lanyo-ajax/square.gif" border="0" title="灰色"></a></td>
+	<td width="16"><a href="#" ext:skin="xtheme-green"><img src="plugins/lanyo-ajax/resources/images/lanyo-ajax/square.gif" border="0" title="绿色"></a></td>
+	<td width="16"><a href="#" ext:skin="xtheme-pink"><img src="plugins/lanyo-ajax/resources/images/lanyo-ajax/square.gif" border="0" title="粉红"></a></td>
+	<td width="15"><a href="#" ext:skin="xtheme-blue"><img src="plugins/lanyo-ajax/resources/images/lanyo-ajax/square.gif" border="0" title="靛蓝色" ></a></td>
+  </tr>
+</table>
+</div>
+<div class="head-right-b">
+<span style="color:#535959; font-size:12px; line-height:16px; float:right;"><span style="color:#333; font-weight:800">$!user.name</span>  &nbsp;欢迎您登录系统!   &nbsp;&nbsp;&nbsp;<span id="time"><script type="text/javascript">document.write(new Date().format('Y年n月j日  H:i:s')) </script></span></span>
+</div>
+</div>
+</div>
+</div><!--"banner"结束-->
+</div>
+<div id="msgPanel" style="position: absolute; left: 0; top: 0;" />
+</body>
+</html>

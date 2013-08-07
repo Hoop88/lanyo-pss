@@ -1,0 +1,39 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>EasyJF.Ext.PagingComBo</title>
+<link rel="stylesheet" type="text/css" href="/plugins/extjs/ext-3.2/resources/css/ext-all.css" />
+<script type="text/javascript" src="/plugins/extjs/ext-3.2/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="/plugins/extjs/ext-3.2/ext-all.js"></script>
+<script type="text/javascript" src="/plugins/lanyo-ajax/core-override-3.2.js"></script>
+<script type="text/javascript" src="/plugins/lanyo-ajax/core-plugin-3.2.js"></script>
+<script type="text/javascript" src="/plugins/lanyo-ajax/core-util-3.2.js"></script>
+<script type="text/javascript" src="/plugins/lanyo-ajax/core-3.2.js"></script>
+<script type="text/javascript" src="ScriptTagProxy.js"></script>
+<link rel="stylesheet" type="text/css" href="../shared/examples.css" />
+</head>
+<body>
+<h1>ScriptTagProxy传输对象的使用</h1>
+
+<p>
+      这是一个演示ScriptTagProxy,调用百度的搜索引擎,结合combo搜索!
+</p>
+
+<p>查看示例的源码<a href="ScriptTagProxy.js" target="_blank">ScriptTagProxy.js</a>.</p>
+
+<div style="width:600px;">
+    <div class="x-box-tl"><div class="x-box-tr"><div class="x-box-tc"></div></div></div>
+    <div class="x-box-ml"><div class="x-box-mr"><div class="x-box-mc">
+        <h3 style="margin-bottom:5px;">在百度中搜索,通过extjs调到百度的远程对象</h3>
+        <input type="text" size="40" id="examples" />
+        <div style="padding-top:4px;">
+            
+        </div>
+    </div></div></div>
+    <div class="x-box-bl"><div class="x-box-br"><div class="x-box-bc"></div></div></div>
+</div>
+<form name="baidu" action="http://www.baidu.com/s" style="display: none;visibility: hidden;">
+	<input name="wd" value="" type="hidden""/>
+</form>
+</body>
+</html>

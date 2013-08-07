@@ -1,0 +1,55 @@
+<div xmlns:ext="http://www.extjs.com" class="body-wrap"><h1>Class <a href="source/core-3.2.html#cls-EasyJF.Ext.Window">EasyJF.Ext.Window</a></h1><table cellspacing="0"><tr><td class="label">Package:</td><td class="hd-info">EasyJF</td></tr><tr><td class="label">Defined In:</td><td class="hd-info">core-3.2.js</td></tr><tr><td class="label">Class:</td><td class="hd-info"><a href="source/core-3.2.html#cls-EasyJF.Ext.Window">Ext.Window</a></td></tr><tr><td class="label">Extends:</td><td class="hd-info">Object</td></tr></table><div class="description">显示单例模式的Window,可将自己的面板放入到EasyJF.Ext.Window中。
+<pre>
+<code><i>//示例：</i>
+<i>//创建需要在窗口中显示的panel</i>
+<b>var</b> myshowpanel=<b>new</b> MyShowPanel();
+<i>//调用工厂方法show来显示窗口</i>
+EasyJF.Ext.Window.show({
+	single:false,
+	width:400,
+	height:160,
+	scope:this,
+	title:<em>"确认信息"</em>,
+	buttons:[<em>'yes'</em>,<em>'no'</em>],
+	items:myshowpanel,
+	handler:<b>function</b>(btn,win,fp){
+		<b>if</b>(btn==<em>'yes'</em>){
+			<i>//my customer handler</i>
+		}<b>else</b>{
+			win.hide();
+		}
+	}
+});</code>
+</pre><br><br><i>This class is a singleton and cannot be created directly.</i></div><div class="hr"></div><a id="EasyJF.Ext.Window-props"></a><h2>Public Properties</h2><div class="no-members">This class has no public properties.</div><a id="EasyJF.Ext.Window-methods"></a><h2>Public Methods</h2><table cellspacing="0" class="member-table"><tbody><tr><th colspan="2" class="sig-header">Method</th><th class="msource-header">Defined By</th></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="EasyJF.Ext.Window-show"></a><b><a href="source/core-3.2.html#method-EasyJF.Ext.Window-show">show</a></b>(&nbsp;<code>Object&nbsp;config</code>&nbsp;)
+    :
+                                        void<div class="mdesc"><div class="short">调用该方法来显示一个窗口。</div><div class="long">调用该方法来显示一个窗口。<div class="mdetail-params"><strong>Parameters:</strong><ul><li><code>config</code> : Object<div class="sub-desc">配置显示窗口的对象，包括以下配置项：
+<ul>
+<li>single {Boolean} :
+设置是否是单例显示，如果是true，在关闭窗口后会删除窗口中的panel。如果要多次使用该窗口显示同一个panel，single要设置为true。</li>
+<li>width {Integer} :
+设置窗口的宽度</li>
+<li>height {Integer} :
+设置窗口高度</li>
+<li>scope {Object} :
+方法中按钮响应方法的执行域</li>
+<li>title {String} :
+窗口的显示名称</li>
+<li>buttons {Array} :
+自定义窗口下显示的按钮，可选值有：'ok','cancel','yes','no'</li>
+<li>items {Object} ：
+窗口内要显示的面板panel</li>
+<li>handler {Function} :
+窗口下按钮的响应事件,其中传入的参数有：
+<ul>
+<li>btn :点击的btn代码</li>
+<li>win :当前window</li>
+<li>fp ：窗口中的panel</li>
+</ul>
+</li>
+<li>layout {String} :
+窗口的布局，默认为fit</li>
+<li>buttonAlign {String} :
+窗口下按钮的对齐方式，默认为'center'</li>
+<li>closeAction {String} :
+窗口关闭事件，默认为'hide'</li>
+</ul></div></li></ul><strong>Returns:</strong><ul><li>void</li></ul></div></div></div></td><td class="msource">Ext.Window</td></tr></tbody></table><a id="EasyJF.Ext.Window-events"></a><h2>Public Events</h2><div class="no-members">This class has no public events.</div></div>

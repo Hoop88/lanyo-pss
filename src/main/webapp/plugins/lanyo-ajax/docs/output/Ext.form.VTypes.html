@@ -1,0 +1,14 @@
+<div xmlns:ext="http://www.extjs.com" class="body-wrap"><h1>Class <a href="source/core-override-3.2.html#cls-Ext.form.VTypes">Ext.form.VTypes</a></h1><table cellspacing="0"><tr><td class="label">Package:</td><td class="hd-info">Ext.form</td></tr><tr><td class="label">Defined In:</td><td class="hd-info">core-override-3.2.js</td></tr><tr><td class="label">Class:</td><td class="hd-info"><a href="source/core-override-3.2.html#cls-Ext.form.VTypes">VTypes</a></td></tr><tr><td class="label">Extends:</td><td class="hd-info">Object</td></tr></table><div class="description">Overridable validation definitions. The validations provided are basic and intended to be easily customizable and extended.<br><br><i>This class is a singleton and cannot be created directly.</i></div><div class="hr"></div><a id="Ext.form.VTypes-props"></a><h2>Public Properties</h2><div class="no-members">This class has no public properties.</div><a id="Ext.form.VTypes-methods"></a><h2>Public Methods</h2><table cellspacing="0" class="member-table"><tbody><tr><th colspan="2" class="sig-header">Method</th><th class="msource-header">Defined By</th></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Ext.form.VTypes-daterange"></a><b><a href="source/core-override-3.2.html#method-Ext.form.VTypes-daterange">daterange</a></b>(&nbsp;<code>Date&nbsp;val</code>,&nbsp;<code>Date&nbsp;field</code>&nbsp;)
+    :
+                                        void<div class="mdesc"><div class="short">日期验证器 用于验证起始日期必须早于结束日期&#13;
+&#13;
+//例子:&#13;
+items:[&#13;
+	{xtype:"datefield",id:"startDate",fieldLabel:"开始时间",name:"start",vtype:"da...</div><div class="long">日期验证器 用于验证起始日期必须早于结束日期
+<pre>
+<code><i>//例子:</i>
+items:[
+	{xtype:<em>"datefield"</em>,id:<em>"startDate"</em>,fieldLabel:<em>"开始时间"</em>,name:<em>"start"</em>,vtype:<em>"daterange"</em>,endDateField:<em>"endDate"</em>},
+	{xtype:<em>"datefield"</em>,id:<em>"endDate"</em>,fieldLabel:<em>"结束时间"</em>,name:<em>"end"</em>,vtype:<em>"daterange"</em>,startDateField:<em>"startDate"</em>},
+]</code>
+    	</pre><div class="mdetail-params"><strong>Parameters:</strong><ul><li><code>val</code> : Date<div class="sub-desc">日期</div></li><li><code>field</code> : Date<div class="sub-desc">Ext.form.DateField</div></li></ul><strong>Returns:</strong><ul><li>void</li></ul></div></div></div></td><td class="msource">VTypes</td></tr></tbody></table><a id="Ext.form.VTypes-events"></a><h2>Public Events</h2><div class="no-members">This class has no public events.</div></div>

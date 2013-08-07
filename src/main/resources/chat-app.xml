@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+	<!-- DAO -->
+	<bean id="chatRoomDao" parent="abstractDao">
+		<property name="proxyInterfaces">
+			<value>com.lanyotech.chat.dao.IChatRoomDAO</value>
+		</property>
+		<property name="target">
+			<bean parent="baseDAO">
+				<constructor-arg>
+					<value>com.lanyotech.chat.domain.ChatRoom</value>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+	<bean id="onlineMessageDao" parent="abstractDao">
+		<property name="proxyInterfaces">
+			<value>com.lanyotech.chat.dao.IOnlineMessageDAO</value>
+		</property>
+		<property name="target">
+			<bean parent="baseDAO">
+				<constructor-arg>
+					<value>com.lanyotech.chat.domain.OnlineMessage</value>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+
+	<!-- Service -->
+	<bean id="chatRoomService"
+		class="com.lanyotech.chat.service.impl.ChatRoomServiceImpl">
+		<property name="chatRoomDao" ref="chatRoomDao" />
+	</bean>
+	<bean id="onlineMessageService"
+		class="com.lanyotech.chat.service.impl.OnlineMessageServiceImpl">
+		<property name="onlineMessageDao" ref="onlineMessageDao" />
+	</bean>
+</beans>

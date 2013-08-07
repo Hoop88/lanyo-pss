@@ -1,0 +1,180 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
+  <title>The source code</title>
+    <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+</head>
+<body  onload="prettyPrint();">
+    <pre class="prettyprint lang-js">Ext.onReady(function(){
+	var form = new Ext.form.FormPanel({
+		width : 300, height : 300,
+		labelWidth:60,
+		frame:true,
+		labelAlign:'right',
+		waitMsgTarget: true,
+		defaultType:'labelfield',
+		defaults:{anchor:'-20'},
+		bodyStyle : 'padding:5px;',
+		items:[
+			{fieldLabel:'姓名',name:'name',allowBlank:false},
+			{
+				fieldLabel:'性别',name:'sex',
+				renderer:function(v){
+					switch(v){
+						case 0 : 
+						  return '女' ;
+						case 1 : 
+						  return '男' ;
+						default :
+						  return '未知';
+					}
+				}
+			},
+			{name:'age',fieldLabel:'年龄'},
+			{
+				fieldLabel:'部门',
+				name:'dept',
+				renderer:function(v){
+					return Ext.getObjVal(v,'name')
+				}
+			},
+			{
+				fieldLabel:'当前时间',
+				name:'nowDate',
+				renderer:Ext.util.Format.dateRenderer('Y-m-d H:m:s')
+			},
+			{fieldLabel:'备注',name : 'remark'}
+		],
+		buttons:[
+			{
+				itemId : 'reload_btn' ,
+				text : '重新加载数据' ,
+				disabled : true,
+				handler:function(){
+					var btn = form.getFooterToolbar().get('reload_btn');
+					btn.disable();
+					form.getForm().load({
+						waitMsg:'loadding...',url : 'data/labelField-data.json',
+						success:function(){
+							btn.enable();
+						}
+					});
+				}
+			}
+		],
+		listeners:{
+			render : {
+				delay : 300 ,
+				fn : function(){
+					var btn = form.getFooterToolbar().get('reload_btn');
+					form.getForm().load({
+							waitMsg:'loadding...',
+							url : 'data/labelField-data.json',
+							success:function(){
+								btn.enable();
+							}
+						})
+				}
+			}
+		}
+	});
+	
+	
+	var editform = new Ext.form.FormPanel({
+		width : 300, height : 300,
+		labelWidth:60,
+		frame:true,
+		defaultType:'textfield',
+		labelAlign:'right',
+		defaults:{anchor:'-20'},
+		bodyStyle : 'padding:5px;',
+		items:[
+			{fieldLabel:'姓名',name:'name',allowBlank:false},
+			//{fieldLabel:'性别',name:'sex'},
+			{
+				fieldLabel:'性别',
+				xtype:'radiogroup' ,
+				defaults:{name : 'sex'},
+				items : [
+					{boxLabel:'男',inputValue:1},
+					{boxLabel:'女',inputValue:0},
+					{boxLabel:'保密',inputValue:1,checked:true}
+				]
+			},
+			{name:'age',fieldLabel:'年龄',xtype:'numberfield'},
+			new EasyJF.Ext.TreeComboField(
+				{
+					fieldLabel:'部门',
+					name : 'dept',
+					tree : new Ext.tree.TreePanel({
+						border : false,
+						autoScroll:true,
+						rootVisible : false,
+						loader : new Ext.tree.TreeLoader({
+							url : 'data/tree.json'
+						}),
+						root : new Ext.tree.AsyncTreeNode({
+							id : 'id',
+							text : '部门' 
+						})
+					})
+				}
+			),{
+				xtype:'textarea',
+				fieldLabel:'备注',
+				name : 'remark',
+				height:110
+			}
+		],
+		buttonAlign:'right',
+		buttons:[
+			{
+				text:'submit',iconCls:'submt',
+				handler:function(){
+					if(form.getForm().isValid())
+						Ext.Msg.alert('Form Valeus',Ext.encode(form.getForm().getValues()));
+				}
+				
+			},{
+				text:'reset',iconCls:'reset',
+				handler:function(){
+					form.getForm().reset();
+				}
+			}
+		]
+	});
+	
+	new Ext.Button({
+		text : 'Show LabelForm' ,
+		renderTo:'example1',
+		handler:function(){
+			EasyJF.Ext.Window.show({
+				width : 400,
+				height : 300,
+				items : form,
+				border : false,
+				single : false,
+				title : '员工管理'
+			});
+		}
+	});
+	new Ext.Button({
+		text : 'Show EditForm' ,
+		renderTo:'example2',
+		handler:function(){
+			EasyJF.Ext.Window.show({
+				width : 400,
+				height : 300,
+				items : editform,
+				border : false,
+				single : false,
+				title : '编辑员工'
+			});
+		}
+	});
+	console.debug(Ext.ComponentMgr.all);
+},this);
+</pre>    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<div xmlns:ext="http://www.extjs.com" class="body-wrap"><h1>Class <a href="source/core-override-3.2.html#cls-Ext.DatePicker">Ext.DatePicker</a></h1><table cellspacing="0"><tr><td class="label">Package:</td><td class="hd-info">Ext</td></tr><tr><td class="label">Defined In:</td><td class="hd-info">core-override-3.2.js</td></tr><tr><td class="label">Class:</td><td class="hd-info"><a href="source/core-override-3.2.html#cls-Ext.DatePicker">DatePicker</a></td></tr><tr><td class="label">Extends:</td><td class="hd-info">Object</td></tr></table><div class="description"></div><div class="hr"></div><a id="Ext.DatePicker-props"></a><h2>Public Properties</h2><div class="no-members">This class has no public properties.</div><a id="Ext.DatePicker-methods"></a><h2>Public Methods</h2><table cellspacing="0" class="member-table"><tbody><tr><th colspan="2" class="sig-header">Method</th><th class="msource-header">Defined By</th></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Ext.DatePicker-handleDateClick"></a><b><a href="source/core-override-3.2.html#method-Ext.DatePicker-handleDateClick">handleDateClick</a></b>(&nbsp;<code>Ext.EventObject&nbsp;e</code>,&nbsp;<code>Ext.DatePicker&nbsp;t</code>&nbsp;)
+    :
+                                        void<div class="mdesc"><div class="short">修改日期选择控件，在选择了一个日期后，把当前的时间追加到选中的日期后。&#13;
+&#13;
+//示例，在DatePicker上面选择了2010-8-10&#13;
+{xtype:"datefield",fieldLabel:"开始时间",name:"sta...</div><div class="long">修改日期选择控件，在选择了一个日期后，把当前的时间追加到选中的日期后。
+<pre>
+<code><i>//示例，在DatePicker上面选择了2010-8-10</i>
+{xtype:<em>"datefield"</em>,fieldLabel:<em>"开始时间"</em>,name:<em>"start"</em>,listeners:{
+	select:<b>function</b>(t,d){
+		console.log(d.format(<em>'Y-m-d H:i:s'</em>)); <i>//2010-8-10 10:34:29 而不是 2010-8-10 00:00:00</i>
+	}
+}}
+</pre>
+</code><div class="mdetail-params"><strong>Parameters:</strong><ul><li><code>e</code> : Ext.EventObject<div class="sub-desc"></div></li><li><code>t</code> : Ext.DatePicker<div class="sub-desc"></div></li></ul><strong>Returns:</strong><ul><li>void</li></ul></div></div></div></td><td class="msource">DatePicker</td></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Ext.DatePicker-selectToday"></a><b><a href="source/core-override-3.2.html#method-Ext.DatePicker-selectToday">selectToday</a></b>()
+    :
+                                        void<div class="mdesc"><div class="short">修改日期选择控件，在选择今天后，把当前的时间追加到选中的今天的日期后。&#13;
+&#13;
+//示例，在DatePicker上面选择了【今天】&#13;
+{xtype:"datefield",fieldLabel:"业务时间",name:"billDate...</div><div class="long">修改日期选择控件，在选择今天后，把当前的时间追加到选中的今天的日期后。
+<pre>
+<code><i>//示例，在DatePicker上面选择了【今天】</i>
+{xtype:<em>"datefield"</em>,fieldLabel:<em>"业务时间"</em>,name:<em>"billDate"</em>,listeners:{
+	select:<b>function</b>(t,d){
+		console.log(d.format(<em>'Y-m-d H:i:s'</em>)); <i>//2010-8-10 10:34:29 而不是 2010-8-10 00:00:00</i>
+	}
+}}
+</pre>
+</code><div class="mdetail-params"><strong>Parameters:</strong><ul><li>None.</li></ul><strong>Returns:</strong><ul><li>void</li></ul></div></div></div></td><td class="msource">DatePicker</td></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Ext.DatePicker-setValue"></a><b><a href="source/core-override-3.2.html#method-Ext.DatePicker-setValue">setValue</a></b>(&nbsp;<code>Date&nbsp;value</code>,&nbsp;<code>Boolean&nbsp;keepTime</code>&nbsp;)
+    :
+                                        void<div class="mdesc"><div class="short">修改日期选择控件，在setValue方法中，加入是否保持时间的选项</div><div class="long">修改日期选择控件，在setValue方法中，加入是否保持时间的选项<div class="mdetail-params"><strong>Parameters:</strong><ul><li><code>value</code> : Date<div class="sub-desc">设置的日期值</div></li><li><code>keepTime</code> : Boolean<div class="sub-desc">是否在日期选择器上保留设置的时间</div></li></ul><strong>Returns:</strong><ul><li>void</li></ul></div></div></div></td><td class="msource">DatePicker</td></tr></tbody></table><a id="Ext.DatePicker-events"></a><h2>Public Events</h2><div class="no-members">This class has no public events.</div></div>

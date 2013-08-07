@@ -1,0 +1,30 @@
+<div xmlns:ext="http://www.extjs.com" class="body-wrap"><h1>Class <a href="source/core-override-3.2.html#cls-Ext.Toolbar">Ext.Toolbar</a></h1><table cellspacing="0"><tr><td class="label">Package:</td><td class="hd-info">Ext</td></tr><tr><td class="label">Defined In:</td><td class="hd-info">core-override-3.2.js</td></tr><tr><td class="label">Class:</td><td class="hd-info"><a href="source/core-override-3.2.html#cls-Ext.Toolbar">Toolbar</a></td></tr><tr><td class="label">Subclasses:</td><td class="hd-info"><a href="output/Ext.ux.StatusBar.html" ext:cls="Ext.ux.StatusBar">StatusBar</a></td></tr><tr><td class="label">Extends:</td><td class="hd-info">Object</td></tr></table><div class="description"></div><div class="hr"></div><a id="Ext.Toolbar-props"></a><h2>Public Properties</h2><div class="no-members">This class has no public properties.</div><a id="Ext.Toolbar-methods"></a><h2>Public Methods</h2><table cellspacing="0" class="member-table"><tbody><tr><th colspan="2" class="sig-header">Method</th><th class="msource-header">Defined By</th></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Ext.Toolbar-getValues"></a><b><a href="source/core-override-3.2.html#method-Ext.Toolbar-getValues">getValues</a></b>()
+    :
+                                        Object<div class="mdesc"><div class="short">获得Toolbar中item为form元素的值,该form元素必须有itemId/name/id&#13;
+&#13;
+{&#13;
+	xtype:"form",&#13;
+	frame:true,&#13;
+	width:400,&#13;
+	height:300,&#13;
+	regi...</div><div class="long">获得Toolbar中item为form元素的值,该form元素必须有itemId/name/id
+<pre>
+<code>{
+	xtype:<em>"form"</em>,
+	frame:true,
+	width:400,
+	height:300,
+	region: <em>'center'</em>,
+	id:<em>"viewportform"</em>,
+	tbar:[<em>'field1:'</em>,{xtype:<em>'textfield'</em>,name:<em>'field1'</em>},<em>'field2:'</em>,{xtype:<em>'textfield'</em>,name:<em>'field2'</em>}],
+	items:[
+		{xtype:<em>'button'</em>,text:<em>'get toolbar values'</em>,scope:this,handler:<b>function</b>(){
+			<b>var</b> o=Ext.getCmp(<em>'viewportform'</em>).getTopToolbar().getValues();
+			console.debug(o);<i>//在field1中填写123，在field2中添加345，得到的值：{{field1:<em>'123'</em>},{field2:<em>'345'</em>}}</i>
+		}}
+	]
+}
+</pre>
+</code><div class="mdetail-params"><strong>Parameters:</strong><ul><li>None.</li></ul><strong>Returns:</strong><ul><li><code>Object</code><div class="sub-desc">选中的值</div></li></ul></div></div></div></td><td class="msource">Toolbar</td></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Ext.Toolbar-insert"></a><b><a href="source/core-override-3.2.html#method-Ext.Toolbar-insert">insert</a></b>(&nbsp;<code>Number&nbsp;index</code>,&nbsp;<code>Object/Ext.Toolbar.Item/Ext.Button/Array&nbsp;item</code>&nbsp;)
+    :
+                                        Ext.Button/Item<div class="mdesc"><div class="short">insertButton方法的简写</div><div class="long">insertButton方法的简写<div class="mdetail-params"><strong>Parameters:</strong><ul><li><code>index</code> : Number<div class="sub-desc">要在工具栏中插入组件的序号</div></li><li><code>item</code> : Object/Ext.Toolbar.Item/Ext.Button/Array<div class="sub-desc">工具栏按钮 或按钮的配置对象，或按钮/配置对象的数组</div></li></ul><strong>Returns:</strong><ul><li><code>Ext.Button/Item</code><div class="sub-desc"></div></li></ul></div></div></div></td><td class="msource">Toolbar</td></tr></tbody></table><a id="Ext.Toolbar-events"></a><h2>Public Events</h2><div class="no-members">This class has no public events.</div></div>

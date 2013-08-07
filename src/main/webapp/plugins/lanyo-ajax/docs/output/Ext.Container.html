@@ -1,0 +1,14 @@
+<div xmlns:ext="http://www.extjs.com" class="body-wrap"><h1>Class <a href="source/core-override-3.2.html#cls-Ext.Container">Ext.Container</a></h1><table cellspacing="0"><tr><td class="label">Package:</td><td class="hd-info">Ext</td></tr><tr><td class="label">Defined In:</td><td class="hd-info">core-override-3.2.js</td></tr><tr><td class="label">Class:</td><td class="hd-info"><a href="source/core-override-3.2.html#cls-Ext.Container">Container</a></td></tr><tr><td class="label">Extends:</td><td class="hd-info">Object</td></tr></table><div class="description"></div><div class="hr"></div><a id="Ext.Container-props"></a><h2>Public Properties</h2><div class="no-members">This class has no public properties.</div><a id="Ext.Container-methods"></a><h2>Public Methods</h2><table cellspacing="0" class="member-table"><tbody><tr><th colspan="2" class="sig-header">Method</th><th class="msource-header">Defined By</th></tr><tr class="method-row expandable "><td class="micon"><a href="#expand" class="exi">&nbsp;</a></td><td class="sig"><a id="Ext.Container-findSomeThing"></a><b><a href="source/core-override-3.2.html#method-Ext.Container-findSomeThing">findSomeThing</a></b>(&nbsp;<code>String&nbsp;id</code>&nbsp;)
+    :
+                                        Component<div class="mdesc"><div class="short">用来查询panel内组件id为指定id 或id/name/dataIndex为指定名称的的表单组件。&#13;
+常用于查找form表单内的组件,替代formPanel.getForm().findField()方法。&#13;
+&#13;
+//示例&#13;
+var...</div><div class="long">用来查询panel内组件id为指定id 或id/name/dataIndex为指定名称的的表单组件。
+常用于查找form表单内的组件,替代formPanel.getForm().findField()方法。
+<pre>
+<code><i>//示例</i>
+<b>var</b> formPanel = Ext.getCmp(<em>'LoginPanel'</em>);
+<b>var</b> name = formPanel.findSomeThing(<em>'name'</em>).getValue();
+</pre>
+</code><div class="mdetail-params"><strong>Parameters:</strong><ul><li><code>id</code> : String<div class="sub-desc">要查找的组件的id或者name名称</div></li></ul><strong>Returns:</strong><ul><li><code>Component</code><div class="sub-desc">符合条件的第一个组件</div></li></ul></div></div></div></td><td class="msource">Container</td></tr></tbody></table><a id="Ext.Container-events"></a><h2>Public Events</h2><div class="no-members">This class has no public events.</div></div>

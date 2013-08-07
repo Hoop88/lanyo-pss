@@ -1,0 +1,111 @@
+/*********************extjs************************/
+/*!
+ * Ext JS Library 3.3.0
+ * Copyright(c) 2006-2010 Ext JS, Inc.
+ * licensing@extjs.com
+ * http://www.extjs.com/license
+ */
+.x-portal .x-panel-dd-spacer {
+    margin-bottom:10px;
+}
+
+.x-portlet {
+    margin-bottom:10px;
+}
+
+/* Clean up the look of the portlets */
+.x-portlet .x-panel-ml {
+    padding-left:2px;
+}
+.x-portlet .x-panel-mr {
+    padding-right:2px;
+}
+.x-portlet .x-panel-bl {
+    padding-left:2px;
+}
+
+.x-portlet .x-panel-br {
+    padding-right:2px;
+}
+.x-portlet .x-panel-body {
+    background:white;
+}
+.x-portlet .x-panel-mc {
+    padding-top:2px;
+}
+.x-portlet .x-panel-bc .x-panel-footer {
+    padding-bottom:2px;
+}
+.x-portlet .x-panel-nofooter .x-panel-bc {
+    height:2px;
+}
+
+/*自定义*/
+.portal-styleSetting-window .x-window-mc{
+	background-color: #FFFFFF!important;
+}
+
+.portal-styleSetting-dataView{
+	
+}
+.portal-styleSetting-dataView .item{
+	float :  left;
+	cursor: pointer;
+	padding: 4px 3px 3px;
+}
+.portal-styleSetting-dataView .over{
+	background:url("../images/portalStyle/styleback.gif") no-repeat scroll center center transparent;
+}
+.portal-styleSetting-dataView .x-view-selected{
+	background:url("../images/portalStyle/stylechicked.gif") no-repeat scroll center center transparent;
+}
+/**选择样式Win**/
+.selectWinDataView{
+	padding: 10px;
+}
+.selectWinDataView .over,.selectWinDataView .x-view-selected{
+	border:solid 1px #D0D0D0!important;
+	background-color: #EDECEC;
+}
+.selectWinDataView .item{
+	float: left;
+	width: 256px;
+	height: 80px;
+	margin:5px;
+	border:solid 1px #FFFFFF;
+	cursor: pointer;
+}
+.selectWinDataView .item p{
+	margin-top:5px;
+	color:#777777;
+}
+.selectWinDataView .operating{}
+
+.selectWinDataView .item .title{
+	font-weight:600;
+	font-family:tahoma,arial,san-serif;
+}
+.selectWinDataView .item .right-content{
+	margin-top:14px;
+	margin-left: 8px;
+}
+.selectWinDataView .item img{
+	float:left;
+	margin-top:8px;
+	width: 64px;
+	height: 64px;
+}
+.selectWinDataViewType div{
+	cursor:pointer;
+	padding: 5px;
+}
+.selectWinDataViewType .x-view-selected{
+	background-color: #679FD0;
+	font-weight: 600;
+	color: #ECECEC;
+}
+.selectWinDataViewType .over{
+	background-color: #679FD0;
+	font-weight: 600;
+	color: #ECECEC;
+}
